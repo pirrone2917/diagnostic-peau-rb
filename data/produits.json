@@ -1,0 +1,378 @@
+{
+  "_lisez_moi": "Catalogue converti depuis l’extrait de caisse (catalogue-visage-ella-bache.csv). AUCUN prix de produit a l’unite n’est affiche dans l’application : le champ prix_public_eur est une reference interne, jamais lu par le code de l’interface. Seuls les prix des coffrets sont affiches. Mettre disponible a false retire un produit ou un coffret des recommandations. Le champ lien_rituel est la phrase qui relie le coffret au rituel : a remplir seulement quand le contenu du coffret est confirme, sinon null. Le champ valeur_reelle_eur affiche « au lieu de X € » : rien ne s'affiche tant qu'il vaut null. Le champ marque sert a la mention affichee en bas de l'ordonnance : elle suit les marques des produits reellement proposes.",
+  "meta": {
+    "version": "1.0",
+    "source": "Extrait caisse Salonkee, institut Révélation Beauté",
+    "derniere_maj": "2026-11-05",
+    "devise": "EUR"
+  },
+  "produits": {
+    "mousseline-tomate-nettoyante": {
+      "nom": "Mousseline Tomate Nettoyante",
+      "marque": "Ella Baché",
+      "contenance": "150 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 32.8,
+      "disponible": true,
+      "image": "mousseline-tomate-nettoyante.webp",
+      "remarque": null
+    },
+    "huile-tomate-demaquillante": {
+      "nom": "Huile Tomate Démaquillante",
+      "marque": "Ella Baché",
+      "contenance": "200 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 37.0,
+      "disponible": true,
+      "image": "huile-tomate-demaquillante.webp",
+      "remarque": "Première phase du démaquillage : dissout le maquillage et les filtres solaires."
+    },
+    "eau-tomate-demaquillante": {
+      "nom": "Eau Tomate Démaquillante",
+      "marque": "Ella Baché",
+      "contenance": "200 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 30.6,
+      "disponible": true,
+      "image": "eau-tomate-demaquillante.webp",
+      "remarque": "Seconde phase du démaquillage, pour les peaux normales à mixtes."
+    },
+    "lait-tomate-demaquillant": {
+      "nom": "Lait Tomate Démaquillant",
+      "marque": "Ella Baché",
+      "contenance": "200 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 30.6,
+      "disponible": true,
+      "image": "lait-tomate-demaquillant.webp",
+      "remarque": "Seconde phase du démaquillage, pour les peaux sèches ou réactives."
+    },
+    "tonique-tomate-eclat": {
+      "nom": "Tonique Tomate Éclat",
+      "marque": "Ella Baché",
+      "contenance": "200 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 30.6,
+      "disponible": true,
+      "image": "tonique-tomate-eclat.webp",
+      "remarque": "Dernière phase : retire les dernières traces et resserre le grain."
+    },
+    "exfoliant-oleo-gel-tomate": {
+      "nom": "Exfoliant Oléo-Gel Tomate",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": 35.3,
+      "disponible": true,
+      "image": "exfoliant-oleo-gel-tomate.webp",
+      "remarque": "Exfoliant de la gamme Ella Perfect. Intitulé à confirmer : l’esthéticienne parle du micro-peeling Tomate, la caisse enregistre « Exfoliant Oléo-Gel Tomate »."
+    },
+    "daily-uv-spf50": {
+      "nom": "Le Daily UV SPF 50+",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Protection",
+      "besoin": "Base commune",
+      "prix_public_eur": 44.6,
+      "disponible": true,
+      "image": "daily-uv-spf50.webp",
+      "remarque": null
+    },
+    "serum-red-focus": {
+      "nom": "Sérum Magistral Red Focus",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Sensibeautics",
+      "besoin": "Peau réactive",
+      "prix_public_eur": 66.0,
+      "disponible": true,
+      "image": "serum-red-focus.webp",
+      "remarque": "Stock faible à surveiller."
+    },
+    "creme-probiotiques-hydra-apaisante": {
+      "nom": "Crème aux Probiotiques Hydra-Apaisante",
+      "marque": "Ella Baché",
+      "nom_caisse": "Crème Probiotique Hydra-Apaisante 50 ml",
+      "contenance": "50 ml",
+      "gamme": "Sensibeautics",
+      "besoin": "Peau réactive",
+      "prix_public_eur": 60.0,
+      "disponible": true,
+      "image": "creme-probiotiques-hydra-apaisante.webp",
+      "remarque": "Intitulé à confirmer : la caisse enregistre « Crème Probiotique », le nom de gamme est « Crème aux Probiotiques »."
+    },
+    "serum-sebatics": {
+      "nom": "Sérum Magistral Sébatics",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Pur Aromatics",
+      "besoin": "Brillance & imperfections",
+      "prix_public_eur": 64.2,
+      "disponible": true,
+      "image": "serum-sebatics.webp",
+      "remarque": "Stock faible à surveiller."
+    },
+    "creme-detox-hydra-matifiante": {
+      "nom": "Crème Détox Hydra-Matifiante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Pur Aromatics",
+      "besoin": "Brillance & imperfections",
+      "prix_public_eur": 63.3,
+      "disponible": true,
+      "image": "creme-detox-hydra-matifiante.webp",
+      "remarque": "Fiche en doublon dans la caisse, à nettoyer côté Salonkee."
+    },
+    "super-serum-hydra-repulpant": {
+      "nom": "Super Sérum Hydra-Repulpant",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Hydra Repulp",
+      "besoin": "Peau assoiffée",
+      "prix_public_eur": 66.0,
+      "disponible": true,
+      "image": "super-serum-hydra-repulpant.webp",
+      "remarque": null
+    },
+    "gel-creme-hydra-repulpant": {
+      "nom": "Gel-Crème Hydra-Repulpant",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Hydra Repulp",
+      "besoin": "Peau assoiffée",
+      "prix_public_eur": 61.1,
+      "disponible": true,
+      "image": "gel-creme-hydra-repulpant.webp",
+      "remarque": "Fiche en doublon possible avec « Crème Hydra-Repulpante 50 ml »."
+    },
+    "soin-regard-hydra-repulpant": {
+      "nom": "Soin Regard Hydra-Repulpant",
+      "marque": "Ella Baché",
+      "contenance": "15 ml",
+      "gamme": "Hydra Repulp",
+      "besoin": "Peau assoiffée",
+      "prix_public_eur": 40.7,
+      "disponible": true,
+      "image": "soin-regard-hydra-repulpant.webp",
+      "remarque": null
+    },
+    "essence-micro-peeling": {
+      "nom": "Essence Micro-Peeling",
+      "marque": "Ella Baché",
+      "contenance": "125 ml",
+      "gamme": "Tomate Glow",
+      "besoin": "Teint terne",
+      "prix_public_eur": 41.4,
+      "disponible": true,
+      "image": "essence-micro-peeling.webp",
+      "remarque": null
+    },
+    "creme-tomate-originale": {
+      "nom": "Crème Tomate l’Originale",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Tomate Glow",
+      "besoin": "Teint terne",
+      "prix_public_eur": 73.7,
+      "disponible": true,
+      "image": "creme-tomate-originale.webp",
+      "remarque": null
+    },
+    "soin-regard-renovateur-eclat": {
+      "nom": "Soin Regard Rénovateur Éclat",
+      "marque": "Ella Baché",
+      "contenance": null,
+      "gamme": "Tomate Glow",
+      "besoin": "Teint terne",
+      "prix_public_eur": 48.3,
+      "disponible": true,
+      "image": "soin-regard-renovateur-eclat.webp",
+      "remarque": "Contenance à confirmer. Stock faible à surveiller."
+    },
+    "super-serum-micro-combleur": {
+      "nom": "Super Sérum Micro-Combleur",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Green Filler",
+      "besoin": "Rides installées",
+      "prix_public_eur": 94.7,
+      "disponible": true,
+      "image": "super-serum-micro-combleur.webp",
+      "remarque": "Deux fiches en caisse avec des prix différents, à trancher côté Salonkee."
+    },
+    "creme-micro-comblante": {
+      "nom": "Crème Micro-Comblante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Green Filler",
+      "besoin": "Rides installées",
+      "prix_public_eur": 83.5,
+      "disponible": true,
+      "image": "creme-micro-comblante.webp",
+      "remarque": "Produit vu en rayon mais non compté en caisse : disponibilité à confirmer par l’institut."
+    },
+    "soin-regard-micro-combleur": {
+      "nom": "Soin Regard Micro-Combleur",
+      "marque": "Ella Baché",
+      "contenance": "15 ml",
+      "gamme": "Green Filler",
+      "besoin": "Rides installées",
+      "prix_public_eur": 63.1,
+      "disponible": true,
+      "image": "soin-regard-micro-combleur.webp",
+      "remarque": null
+    },
+    "super-serum-pro-liftant": {
+      "nom": "Super Sérum Pro-Liftant",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Morphostructure",
+      "besoin": "Ovale qui se relâche",
+      "prix_public_eur": 98.4,
+      "disponible": true,
+      "image": "super-serum-pro-liftant.webp",
+      "remarque": null
+    },
+    "creme-riche-pro-liftante": {
+      "nom": "Crème Riche Pro-Liftante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Morphostructure",
+      "besoin": "Ovale qui se relâche",
+      "prix_public_eur": 98.3,
+      "disponible": true,
+      "image": "creme-riche-pro-liftante.webp",
+      "remarque": null
+    },
+    "skinissime-creme-regard": {
+      "nom": "Skinissime Crème Regard Totale Sublimatrice",
+      "marque": "Ella Baché",
+      "contenance": "15 ml",
+      "gamme": "Skinissime",
+      "besoin": "Regard fatigué",
+      "prix_public_eur": 75.7,
+      "disponible": true,
+      "image": "skinissime-creme-regard.webp",
+      "remarque": null
+    },
+    "acide-hyaluronique": {
+      "nom": "Acide Hyaluronique",
+      "marque": "LPG",
+      "contenance": null,
+      "gamme": "Endermonutri",
+      "besoin": "Compléments alimentaires",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "acide-hyaluronique.webp",
+      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
+    },
+    "collagene-elastine": {
+      "nom": "Collagène et Élastine",
+      "marque": "LPG",
+      "contenance": null,
+      "gamme": "Endermonutri",
+      "besoin": "Compléments alimentaires",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "collagene-elastine.webp",
+      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
+    },
+    "collagenity-pro-age": {
+      "nom": "Collagenity Pro-Âge",
+      "marque": "LPG",
+      "contenance": null,
+      "gamme": "Endermonutri",
+      "besoin": "Compléments alimentaires",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "collagenity-pro-age.webp",
+      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
+    }
+  },
+  "coffrets": {
+    "coffret-eclat": {
+      "nom": "L’Instant Précieux — Éclat",
+      "saisons": [
+        "noel"
+      ],
+      "prix_eur": 125.0,
+      "valeur_reelle_eur": null,
+      "disponible": true,
+      "image": "coffret-eclat.webp",
+      "contenu": [
+        "Crème Tomate l’Originale 50 ml",
+        "Eau Tomate Démaquillante 50 ml",
+        "Mousseline Tomate Nettoyante 30 ml",
+        "Essence Micro-Peeling 30 ml",
+        "Crème Micro-Comblante 15 ml",
+        "Super Sérum Micro-Combleur 30 ml",
+        "Mascara en édition limitée"
+      ],
+      "lien_rituel": "Votre nettoyant, votre essence et votre Crème Tomate l’Originale y sont réunis, avec deux soins Green Filler et un mascara en édition limitée.",
+      "remarque": null,
+      "marque": "Ella Baché"
+    },
+    "coffret-hydratation": {
+      "nom": "L’Instant Précieux — Hydratation",
+      "saisons": [
+        "noel"
+      ],
+      "prix_eur": 85.0,
+      "valeur_reelle_eur": null,
+      "disponible": true,
+      "image": "coffret-hydratation.webp",
+      "contenu": null,
+      "lien_rituel": null,
+      "remarque": "Contenu à confirmer par l’institut avant affichage.",
+      "marque": "Ella Baché"
+    },
+    "coffret-rides-fermete": {
+      "nom": "L’Instant Précieux — Rides & Fermeté",
+      "saisons": [
+        "noel"
+      ],
+      "prix_eur": 104.0,
+      "valeur_reelle_eur": null,
+      "disponible": true,
+      "image": "coffret-rides-fermete.webp",
+      "contenu": null,
+      "lien_rituel": null,
+      "remarque": "Contenu à confirmer par l’institut avant affichage.",
+      "marque": "Ella Baché"
+    },
+    "coffret-anti-age": {
+      "nom": "L’Instant Précieux — Anti-Âge",
+      "saisons": [
+        "noel"
+      ],
+      "prix_eur": 113.0,
+      "valeur_reelle_eur": null,
+      "disponible": true,
+      "image": "coffret-anti-age.webp",
+      "contenu": null,
+      "lien_rituel": null,
+      "remarque": "Contenu à confirmer par l’institut avant affichage.",
+      "marque": "Ella Baché"
+    },
+    "coffret-fete-des-meres": {
+      "nom": "Coffret Hydratation Fête des Mères",
+      "saisons": [
+        "fete-des-meres"
+      ],
+      "prix_eur": 64.2,
+      "valeur_reelle_eur": null,
+      "disponible": true,
+      "image": null,
+      "contenu": null,
+      "lien_rituel": null,
+      "remarque": "Hors saison de Noël : jamais proposé tant que la saison active est « noel ».",
+      "marque": "Ella Baché"
+    }
+  }
+}

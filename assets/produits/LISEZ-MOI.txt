@@ -1,0 +1,6 @@
+Déposez ici les photos de produits, en .webp, avec exactement les noms
+listés dans la section 4 du README. Rien d'autre à faire : l'application
+les affiche dès qu'elles sont présentes.
+
+Tant qu'une photo manque, un bloc Crème Amande tient sa place.
+Ce n'est pas une erreur.

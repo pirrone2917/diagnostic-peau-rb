@@ -1,0 +1,28 @@
+{
+  "_lisez_moi": "Reglages de l’application. C’est le seul fichier a modifier au quotidien. Voir le README pour chaque champ.",
+
+  "saison": "noel",
+  "_saison": "« noel » affiche les coffrets de Noël. « permanent » les masque et affiche « Votre duo de soins » à la place. Aucune autre valeur.",
+
+  "tirage_date": null,
+  "_tirage_date": "Date du tirage au sort, au format \"2026-12-24\". Tant que ce champ vaut null, la mention du tirage n’apparaît pas du tout.",
+
+  "apps_script_url": null,
+  "_apps_script_url": "Adresse web de l’Apps Script qui enregistre les réponses dans le Google Sheet. Tant que ce champ vaut null, l’application fonctionne normalement mais n’enregistre rien.",
+
+  "email_contact": null,
+  "_email_contact": "Adresse affichée sur la page Confidentialité pour les demandes d’accès ou de suppression. À RENSEIGNER par l’institut : tant que ce champ vaut null, la page Confidentialité renvoie vers l’accueil de l’institut uniquement.",
+
+  "institut": {
+    "nom": "Révélation Beauté",
+    "depuis": "2005",
+    "adresse": "Rue des Français 289/02, 4430 Ans",
+    "ville": "Ans"
+  },
+
+  "sources_trafic": ["salle-attente", "manucure", "instagram", "comptoir"],
+  "_sources_trafic": "Valeurs acceptées pour le paramètre ?src= de l’adresse. Toute autre valeur est enregistrée comme « inconnue ».",
+
+  "duree_conservation_ans": 3,
+  "_duree_conservation_ans": "Durée de conservation des réponses, annoncée sur la page Confidentialité."
+}

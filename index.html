@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Révélation de votre peau — Révélation Beauté</title>
+<meta name="description" content="Lecture de peau en cinq questions. Révélation Beauté, institut de beauté à Ans, depuis 2005.">
+<meta name="theme-color" content="#3D3B3A">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=League+Spartan:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/logo/rb-monogramme-charbon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="page">
+  <main class="scene" id="scene">
+
+    <!-- ============================================ Écran 1 — Accueil -->
+    <section class="ecran ecran--couverture ecran--actif" id="ecran-accueil" aria-label="Accueil">
+      <img class="monogramme entre" src="assets/logo/rb-monogramme-charbon.svg" alt="Révélation Beauté" width="52" height="45">
+      <p class="surtitre entre" id="accueil-surtitre" style="margin-top:2rem">LECTURE DE PEAU</p>
+      <h1 class="titre-maison entre" id="accueil-titre"><em>La Révélation</em><br>de votre peau</h1>
+      <hr class="filet entre">
+      <p class="prose entre" id="accueil-texte">Cinq questions, deux minutes. Chez Révélation Beauté, nous lisons la peau avant de la soigner. Découvrez ce dont la vôtre a besoin cet hiver.</p>
+      <div class="entre" style="margin-top:2.75rem">
+        <button class="bouton" type="button" id="accueil-bouton">COMMENCER LA LECTURE</button>
+      </div>
+      <p class="mentions" id="accueil-alerte" hidden></p>
+    </section>
+
+    <!-- ========================================== Écran 2 — Questions -->
+    <section class="ecran ecran--question" id="ecran-question" aria-label="Lecture de peau">
+      <div class="progression">
+        <button class="bouton-retour" type="button" id="question-retour">
+          <span aria-hidden="true">←</span> Retour
+        </button>
+        <div class="progression__piste" role="presentation">
+          <div class="progression__filet" id="progression-filet"></div>
+        </div>
+        <p class="progression__rang" id="progression-rang"></p>
+      </div>
+
+      <div class="question__corps" id="question-corps"></div>
+    </section>
+
+    <!-- =========================================== Écran 3 — Résultat -->
+    <section class="ecran" id="ecran-resultat" aria-label="Votre ordonnance de peau">
+      <div id="resultat-corps"></div>
+    </section>
+
+  </main>
+
+  <footer class="bandeau">
+    <img class="monogramme monogramme--bandeau" src="assets/logo/rb-monogramme-blanc.svg" alt="" width="40" height="35">
+    <p class="bandeau__depuis">Depuis 2005</p>
+  </footer>
+</div>
+
+<script src="js/moteur.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

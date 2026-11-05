@@ -1,0 +1,829 @@
+/* ============================================================
+   Révélation Beauté — La Révélation de votre peau
+   Feuille de style unique. Mobile d'abord (référence 390 × 844).
+
+   Règles tenues dans tout ce fichier :
+   — cinq couleurs, pas une de plus (voir :root) ;
+   — aucune ombre, aucun dégradé, aucun effet sur le texte ;
+   — angles droits, 2 px d'arrondi au maximum ;
+   — Or Révélation uniquement sur fond Charbon.
+   ============================================================ */
+
+:root {
+  /* Palette — aucune autre couleur dans ce fichier */
+  --charbon:        #3D3B3A;
+  --parchemin:      #FAF7F2;
+  --creme-amande:   #E8DDD3;
+  --sable-dore:     #C9A87C;
+  --or-revelation:  #B08D57;
+
+  /* Typographie */
+  --titre: 'Cormorant Garamond', 'Times New Roman', serif;
+  --structure: 'League Spartan', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Mesures */
+  --colonne: 34rem;
+  --gouttiere: 1.5rem;
+  --bandeau: 120px;
+  --angle: 2px;
+  --filet: 1px;
+
+  /* Rythme de la révélation */
+  --temps: 620ms;
+  --cadence: 180ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--parchemin);
+  color: var(--charbon);
+  font-family: var(--titre);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; border: 0; }
+
+/* ------------------------------------------------------------ Ossature */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.scene {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: var(--colonne);
+  margin: 0 auto;
+  padding: 2.25rem var(--gouttiere) 3.5rem;
+}
+
+.ecran { display: none; }
+.ecran--actif { display: block; }
+
+/* L'accueil se tient au centre de la page, comme une couverture. */
+.ecran--couverture.ecran--actif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--bandeau) - 5.75rem);
+}
+
+/* Les questions : la progression reste en haut, la question respire au centre. */
+.ecran--question.ecran--actif {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--bandeau) - 5.75rem);
+}
+.ecran--question .progression { flex: 0 0 auto; }
+.question__corps {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/* ------------------------------------------------------- Typographie */
+
+.surtitre {
+  font-family: var(--structure);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.78;
+}
+
+.titre-maison {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 2.625rem;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  margin: 1.125rem 0 0;
+}
+.titre-maison em { font-style: italic; }
+
+.titre-ecran {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 1.875rem;
+  line-height: 1.22;
+  margin: 0;
+}
+
+.prose {
+  font-family: var(--titre);
+  font-size: 1.1875rem;
+  line-height: 1.68;
+  margin: 1.5rem 0 0;
+}
+
+.aide {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0.875rem 0 0;
+  opacity: 0.8;
+}
+
+.etiquette {
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin: 0;
+}
+
+/* --------------------------------------------------------- Ornements */
+
+.filet {
+  height: var(--filet);
+  background: var(--sable-dore);
+  border: 0;
+  margin: 1.75rem 0 0;
+  width: 3.5rem;
+}
+
+.filet--trace {
+  width: 0;
+  transition: width 900ms ease-out;
+}
+.filet--trace.est-trace { width: 3.5rem; }
+
+.monogramme {
+  width: 3.25rem;
+  height: auto;
+}
+.monogramme--bandeau { width: 2.5rem; }
+
+/* ----------------------------------------------------------- Boutons */
+
+.bouton {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 1.1875rem 1.5rem;
+  border: var(--filet) solid var(--charbon);
+  border-radius: var(--angle);
+  background: var(--charbon);
+  color: var(--parchemin);
+  font-family: var(--structure);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 240ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.bouton:hover { opacity: 0.86; }
+
+.bouton--second {
+  background: transparent;
+  color: var(--charbon);
+}
+
+.bouton-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0;
+  border: 0;
+  background: none;
+  color: var(--charbon);
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.78;
+}
+.bouton-retour:hover { opacity: 1; }
+.bouton-retour span[aria-hidden] { font-size: 0.875rem; line-height: 1; }
+
+/* ------------------------------------------------------- Progression */
+
+.progression {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.progression__piste {
+  position: relative;
+  flex: 1;
+  height: var(--filet);
+  background: var(--creme-amande);
+  overflow: hidden;
+}
+
+.progression__filet {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: var(--sable-dore);
+  transition: width 520ms ease-out;
+}
+
+.progression__rang {
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------- Les cartes */
+
+.reponses {
+  list-style: none;
+  margin: 2.25rem 0 0;
+  padding: 0;
+}
+.reponses li + li { margin-top: 0.625rem; }
+
+.reponse {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 4rem;
+  padding: 1.25rem 1.375rem 1.25rem 1.5rem;
+  border: var(--filet) solid var(--creme-amande);
+  border-radius: var(--angle);
+  background: transparent;
+  color: var(--charbon);
+  font-family: var(--titre);
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 260ms ease, border-color 260ms ease;
+}
+
+.reponse::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: var(--sable-dore);
+  transition: width 220ms ease-out;
+}
+
+.reponse:hover { border-color: var(--sable-dore); }
+
+/* Les réponses à cocher portent un repère, pour qu'on voie
+   d'un coup d'œil qu'on peut en choisir plusieurs. */
+.reponse--multiple { padding-right: 3.25rem; }
+.reponse--multiple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.375rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: -0.5625rem;
+  border: var(--filet) solid var(--sable-dore);
+  border-radius: var(--angle);
+  background: transparent;
+  transition: background-color 200ms ease;
+}
+.reponse--multiple.reponse--choisie::after { background: var(--charbon); }
+
+.bouton[disabled] { opacity: 0.38; cursor: default; }
+.bouton[disabled]:hover { opacity: 0.38; }
+
+
+
+.reponse--choisie {
+  background: var(--creme-amande);
+  border-color: var(--creme-amande);
+}
+.reponse--choisie::before { width: 3px; }
+
+/* --------------------------------------------------- L'ordonnance */
+
+.ordonnance {
+  margin-top: 1.5rem;
+  border: var(--filet) solid var(--sable-dore);
+  border-radius: var(--angle);
+  padding: 1.75rem 1.375rem 2rem;
+}
+
+.ordonnance__entete {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: var(--filet) solid var(--creme-amande);
+}
+
+.ordonnance__reference {
+  text-align: right;
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.9;
+  opacity: 0.78;
+}
+
+.ordonnance__destinataire {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  font-style: italic;
+  margin: 1.25rem 0 0;
+  opacity: 0.8;
+}
+
+.profil-nom {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 2.125rem;
+  line-height: 1.14;
+  margin: 1.25rem 0 0;
+}
+
+.bloc { margin-top: 1.75rem; }
+.bloc__texte {
+  font-family: var(--titre);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 0;
+}
+.bloc__texte--dit { font-style: italic; }
+
+.rituel {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.rituel > li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0 0.875rem;
+  padding: 1.125rem 0;
+  border-top: var(--filet) solid var(--creme-amande);
+}
+.rituel > li:last-child { border-bottom: var(--filet) solid var(--creme-amande); }
+
+.rituel__numero {
+  font-family: var(--structure);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  opacity: 0.78;
+}
+.rituel__titre {
+  font-family: var(--structure);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.rituel__note {
+  font-family: var(--structure);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  opacity: 0.78;
+}
+.rituel__gamme {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  font-style: italic;
+  margin-top: 0.1875rem;
+  opacity: 0.8;
+}
+.rituel__produits {
+  list-style: none;
+  margin: 0.625rem 0 0;
+  padding: 0;
+  grid-column: 2;
+}
+.rituel__produits li + li { margin-top: 0.5rem; }
+
+.produit {
+  display: grid;
+  grid-template-columns: 3.75rem 1fr;
+  align-items: center;
+  gap: 1.125rem;
+}
+
+.produit__visuel {
+  position: relative;
+  width: 3.75rem;
+  height: 5rem;
+  background: var(--creme-amande);
+  border-radius: var(--angle);
+  overflow: hidden;
+}
+.produit__visuel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.produit__visuel--vide img { display: none; }
+
+.produit__nom {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+.produit__contenance {
+  font-family: var(--structure);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin-top: 0.1875rem;
+}
+
+.note {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin: 1.25rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--sable-dore);
+  opacity: 0.84;
+}
+
+/* ------------------------------------------------- Coffret et duo */
+
+.pont + .coffret { margin-top: 1rem; }
+
+.coffret {
+  margin-top: 1.75rem;
+  background: var(--creme-amande);
+  border-radius: var(--angle);
+  padding: 1.5rem 1.375rem;
+}
+.coffret__visuel {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--creme-amande);
+  border-radius: var(--angle);
+  margin-bottom: 1.125rem;
+  overflow: hidden;
+}
+.coffret__visuel img { width: 100%; height: 100%; object-fit: contain; }
+.coffret__visuel--vide { display: none; }
+
+/* Dans le bloc Crème Amande, la réserve d'image passe en Parchemin :
+   sinon elle disparaîtrait dans le fond. */
+.coffret .produit__visuel { background: var(--parchemin); }
+
+.coffret__nom {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 1.625rem;
+  line-height: 1.18;
+  margin: 0;
+}
+/* Le pont entre le rituel et le coffret : le conseil d'abord, le coffret ensuite. */
+.pont {
+  font-family: var(--titre);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 2rem 0 0;
+}
+
+.coffret__prix {
+  font-family: var(--structure);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: 0.75rem 0 0;
+}
+.coffret__valeur {
+  font-family: var(--titre);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-left: 0.625rem;
+  opacity: 0.78;
+}
+.coffret__lien {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  margin: 1rem 0 0;
+}
+.coffret__contenu {
+  list-style: none;
+  margin: 1.125rem 0 0;
+  padding: 0;
+}
+.coffret__contenu li {
+  font-family: var(--titre);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.375rem 0;
+  border-top: var(--filet) solid var(--parchemin);
+}
+
+.mention-marque {
+  font-family: var(--structure);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin: 1.75rem 0 0;
+}
+
+.signature {
+  font-family: var(--titre);
+  font-size: 1.125rem;
+  font-style: italic;
+  margin: 1.25rem 0 0;
+  padding-top: 1.25rem;
+  border-top: var(--filet) solid var(--creme-amande);
+}
+
+/* ------------------------------------------------- Appel à l'action */
+
+.accueil-bloc {
+  margin-top: 1.5rem;
+  background: var(--charbon);
+  color: var(--parchemin);
+  padding: 2rem 1.5rem;
+}
+.accueil-bloc__titre {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 1.625rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.accueil-bloc__texte {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  opacity: 0.82;
+}
+/* L'étiquette reste en Parchemin ; seul le code passe en Or Révélation,
+   à une taille suffisante pour rester lisible malgré le contraste
+   plus doux de l'or sur le Charbon. */
+.accueil-bloc__etiquette {
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 1.75rem 0 0;
+  opacity: 0.82;
+}
+.accueil-bloc__code {
+  font-family: var(--structure);
+  font-size: 1.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--or-revelation);
+  margin: 0.5rem 0 0;
+}
+
+/* ------------------------------------------------------ Formulaire */
+
+.collecte {
+  margin-top: 2.5rem;
+  padding-top: 2.25rem;
+  border-top: var(--filet) solid var(--creme-amande);
+}
+
+.champ { margin-top: 1.5rem; }
+.champ > label {
+  display: block;
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin-bottom: 0.5rem;
+}
+.champ input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.625rem 0;
+  border: 0;
+  border-bottom: var(--filet) solid var(--sable-dore);
+  border-radius: 0;
+  background: transparent;
+  color: var(--charbon);
+  font-family: var(--titre);
+  font-size: 1.1875rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.champ input:focus { outline: 0; border-bottom-width: 2px; }
+
+.champ--duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.consentement {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.875rem;
+  align-items: start;
+  margin-top: 1.75rem;
+  cursor: pointer;
+}
+.consentement input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.125rem 0 0;
+  border: var(--filet) solid var(--charbon);
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  display: grid;
+  place-content: center;
+}
+.consentement input::before {
+  content: '';
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--charbon);
+  transform: scale(0);
+  transition: transform 180ms ease-out;
+}
+.consentement input:checked::before { transform: scale(1); }
+.consentement span {
+  font-family: var(--titre);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.collecte .bouton { margin-top: 2rem; }
+
+.mentions {
+  font-family: var(--titre);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+.mentions a { color: var(--charbon); text-decoration: underline; text-underline-offset: 3px; }
+
+.confirmation {
+  font-family: var(--titre);
+  font-size: 1.1875rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.reprise { margin-top: 2.25rem; }
+
+/* --------------------------------------------------------- Bandeau */
+
+.bandeau {
+  flex: 0 0 auto;
+  height: var(--bandeau);
+  background: var(--charbon);
+  color: var(--parchemin);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.bandeau__depuis {
+  font-family: var(--structure);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--or-revelation);
+}
+
+/* ------------------------------------------------- Page intérieure */
+
+.texte-long h1 {
+  font-family: var(--titre);
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 1.16;
+  margin: 1.125rem 0 0;
+}
+.texte-long h2 {
+  font-family: var(--structure);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.75rem;
+}
+.texte-long p, .texte-long li {
+  font-family: var(--titre);
+  font-size: 1.125rem;
+  line-height: 1.68;
+}
+.texte-long ul { padding-left: 1.25rem; margin: 0; }
+.texte-long li + li { margin-top: 0.375rem; }
+.texte-long a { color: var(--charbon); text-decoration: underline; text-underline-offset: 3px; }
+.texte-long .retour { margin-top: 3rem; }
+
+/* ----------------------------------------------- La révélation */
+
+.revele {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+.revele--visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--temps) ease-out, transform var(--temps) ease-out;
+  transition-delay: var(--d, 0ms);
+}
+
+.ecran--actif .entre {
+  animation: entre 520ms ease-out both;
+}
+@keyframes entre {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------- Accessibilité */
+
+:focus-visible {
+  outline: 2px solid var(--sable-dore);
+  outline-offset: 3px;
+}
+
+.lecteur-seul {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+  .revele { opacity: 1; transform: none; }
+  .filet--trace { width: 3.5rem; }
+}
+
+/* ------------------------------------------------ Grands écrans */
+
+@media (min-width: 48rem) {
+  :root { --gouttiere: 2.5rem; --colonne: 38rem; }
+  .scene { padding-top: 4rem; padding-bottom: 5rem; }
+  .titre-maison { font-size: 3.25rem; }
+  .titre-ecran { font-size: 2.125rem; }
+  .profil-nom { font-size: 2.5rem; }
+  .ordonnance { padding: 2.5rem 2.25rem 2.75rem; }
+  .accueil-bloc { padding: 2.5rem 2.25rem; }
+  .produit { grid-template-columns: 4.5rem 1fr; }
+  .produit__visuel { width: 4.5rem; height: 6rem; }
+}

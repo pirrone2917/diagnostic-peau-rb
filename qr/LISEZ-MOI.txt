@@ -1,0 +1,18 @@
+Les QR codes ne sont pas encore ici, et c'est volontaire.
+
+Un QR code contient l'adresse du site. Tant que le site n'est pas en ligne,
+un QR code généré maintenant renverrait vers une adresse qui n'existe pas,
+et quelqu'un pourrait l'imprimer sans le savoir.
+
+Une fois le site en ligne, une seule commande les crée tous les trois :
+
+    python3 tools/qr.py --base https://VOTRE-ADRESSE/
+
+Vous obtiendrez ici :
+    qr-salle-attente.svg
+    qr-manucure.svg
+    qr-comptoir.svg
+
+Charbon sur Parchemin, monogramme R/B au centre, format SVG :
+ils s'impriment net à n'importe quelle taille, d'un chevalet de table
+à une affiche.

@@ -1,0 +1,573 @@
+{
+  "_lisez_moi": "Ce fichier contient TOUTE la logique de la lecture de peau : les questions, les reponses, l’ordre de priorite et les textes des profils. L’institut peut modifier les textes et l’ordre de priorite sans toucher au code. Les identifiants (id, code, profil, produits) ne doivent PAS etre renommes.",
+  "meta": {
+    "version": "1.0",
+    "derniere_maj": "2026-11-05"
+  },
+  "accueil": {
+    "surtitre": "LECTURE DE PEAU",
+    "titre_avant": "La Révélation",
+    "titre_apres": "de votre peau",
+    "texte": "Cinq questions, deux minutes. Chez Révélation Beauté, nous lisons la peau avant de la soigner. Découvrez ce dont la vôtre a besoin cet hiver.",
+    "bouton": "COMMENCER LA LECTURE"
+  },
+  "question_entree": {
+    "id": "pour_qui",
+    "numero": null,
+    "libelle": "Cette lecture est pour…",
+    "aide": null,
+    "reponses": [
+      {
+        "id": "moi",
+        "libelle": "Moi",
+        "branche": "a"
+      },
+      {
+        "id": "offrir",
+        "libelle": "Une personne à qui je veux offrir",
+        "branche": "b"
+      }
+    ]
+  },
+  "branche_a": {
+    "titre": "Votre lecture de peau",
+    "questions": [
+      {
+        "id": "q1_reactivite",
+        "numero": 1,
+        "libelle": "Votre peau réagit-elle facilement ?",
+        "aide": "Rougeurs, picotements, sensation de chaleur après un produit ou un changement de température.",
+        "reponses": [
+          {
+            "id": "r_souvent",
+            "libelle": "Souvent",
+            "code": "R2"
+          },
+          {
+            "id": "r_parfois",
+            "libelle": "Parfois",
+            "code": "R1"
+          },
+          {
+            "id": "r_rarement",
+            "libelle": "Rarement",
+            "code": "R0"
+          }
+        ]
+      },
+      {
+        "id": "q2_brillance",
+        "numero": 2,
+        "libelle": "En milieu de journée, votre front, votre nez ou votre menton brillent-ils ?",
+        "aide": "Avez-vous des pores visibles ou des imperfections ?",
+        "reponses": [
+          {
+            "id": "s_nettement",
+            "libelle": "Oui, nettement",
+            "code": "S2"
+          },
+          {
+            "id": "s_un_peu",
+            "libelle": "Un peu",
+            "code": "S1"
+          },
+          {
+            "id": "s_non",
+            "libelle": "Non, ma peau est plutôt sèche",
+            "code": "S0"
+          }
+        ]
+      },
+      {
+        "id": "q3_hydratation",
+        "numero": 3,
+        "libelle": "Après le nettoyage, votre peau tiraille-t-elle ?",
+        "aide": "Voyez-vous de fines ridules qui s’estompent quand vous appliquez votre crème ?",
+        "reponses": [
+          {
+            "id": "h_oui",
+            "libelle": "Oui",
+            "code": "H2"
+          },
+          {
+            "id": "h_parfois",
+            "libelle": "Parfois",
+            "code": "H1"
+          },
+          {
+            "id": "h_non",
+            "libelle": "Non",
+            "code": "H0"
+          }
+        ]
+      },
+      {
+        "id": "q4_preoccupation",
+        "numero": 4,
+        "libelle": "Face au miroir, ce qui vous préoccupe le plus :",
+        "aide": null,
+        "choix_multiple": true,
+        "_choix_multiple": "true : la cliente peut cocher plusieurs reponses. Le profil est donne par la preoccupation la plus prioritaire ; les autres sont rappelees sous le rituel.",
+        "bouton_continuer": "CONTINUER",
+        "exclusif": "p_aucun",
+        "_exclusif": "Cette reponse se coche seule : la choisir decoche les autres.",
+        "reponses": [
+          {
+            "id": "p_rides",
+            "libelle": "Des rides marquées",
+            "code": "P_RIDES",
+            "mention": "des rides marquées"
+          },
+          {
+            "id": "p_ovale",
+            "libelle": "L’ovale qui se relâche, une perte de densité",
+            "code": "P_OVALE",
+            "mention": "un relâchement de l’ovale"
+          },
+          {
+            "id": "p_eclat",
+            "libelle": "Un teint terne, un grain de peau irrégulier",
+            "code": "P_ECLAT",
+            "mention": "un teint terne"
+          },
+          {
+            "id": "p_aucun",
+            "libelle": "Rien de particulier",
+            "code": "P_AUCUN",
+            "mention": null
+          }
+        ]
+      },
+      {
+        "id": "q5_regard",
+        "numero": 5,
+        "libelle": "Votre regard paraît-il fatigué ?",
+        "aide": "Cernes, poches, ridules au coin des yeux.",
+        "reponses": [
+          {
+            "id": "y_oui",
+            "libelle": "Oui",
+            "code": "Y1"
+          },
+          {
+            "id": "y_non",
+            "libelle": "Non",
+            "code": "Y0"
+          }
+        ]
+      }
+    ],
+    "_lisez_moi_priorites": "Le premier test vrai donne le profil. L’ordre est volontaire : on traite d’abord la barriere cutanee (reactivite), puis le sebum, puis l’hydratation, puis les preoccupations. Pour changer l’ordre, deplacez les lignes de cette liste. La derniere ligne est le profil par defaut.",
+    "priorites": [
+      {
+        "rang": 1,
+        "si_code": "R2",
+        "profil": "peau_reactive"
+      },
+      {
+        "rang": 2,
+        "si_code": "S2",
+        "profil": "peau_brillante"
+      },
+      {
+        "rang": 3,
+        "si_code": "H2",
+        "profil": "peau_assoiffee"
+      },
+      {
+        "rang": 4,
+        "si_code": "P_RIDES",
+        "profil": "rides_installees"
+      },
+      {
+        "rang": 5,
+        "si_code": "P_OVALE",
+        "profil": "ovale_qui_se_relache"
+      },
+      {
+        "rang": 6,
+        "si_code": "P_ECLAT",
+        "profil": "teint_terne"
+      },
+      {
+        "rang": 7,
+        "si_code": "H1",
+        "profil": "peau_assoiffee"
+      },
+      {
+        "rang": 8,
+        "si_code": null,
+        "profil": "teint_terne"
+      }
+    ],
+    "notes_secondaires": [
+      {
+        "id": "sensibilite_ponctuelle",
+        "si_code": "R1",
+        "sauf_si_profil": [
+          "peau_reactive"
+        ],
+        "texte": "Votre peau montre une sensibilité ponctuelle : signalez-le à votre esthéticienne."
+      }
+    ],
+    "regle_soin_regard": {
+      "si_code": "Y1",
+      "_lisez_moi": "Si la cliente repond Oui a la question 5, on ajoute le soin regard du profil (champ soin_regard). Si le profil n’a pas de soin regard, on n’affiche rien."
+    },
+    "note_preoccupations": {
+      "_lisez_moi": "Phrase ajoutee sous le rituel quand la cliente a coche plusieurs preoccupations : {autres} est remplace par celles qui n'ont pas donne le profil.",
+      "texte": "Vous nous signalez aussi {autres}. Nous en tiendrons compte lors de votre séance.",
+      "liaison": " et "
+    }
+  },
+  "branche_b": {
+    "titre": "Offrir une lecture de peau",
+    "questions": [
+      {
+        "id": "b1_age",
+        "numero": 1,
+        "libelle": "Elle a environ…",
+        "aide": null,
+        "reponses": [
+          {
+            "id": "b_moins_35",
+            "libelle": "Moins de 35 ans",
+            "code": "A_MOINS35"
+          },
+          {
+            "id": "b_35_50",
+            "libelle": "35 à 50 ans",
+            "code": "A_35_50"
+          },
+          {
+            "id": "b_plus_50",
+            "libelle": "Plus de 50 ans",
+            "code": "A_PLUS50"
+          }
+        ]
+      },
+      {
+        "id": "b2_peau",
+        "numero": 2,
+        "libelle": "Ce qu’elle dirait de sa peau :",
+        "aide": null,
+        "reponses": [
+          {
+            "id": "b_eclat",
+            "libelle": "Elle manque d’éclat",
+            "code": "B_ECLAT"
+          },
+          {
+            "id": "b_seche",
+            "libelle": "Elle est sèche, elle tiraille",
+            "code": "B_SECHE"
+          },
+          {
+            "id": "b_rides",
+            "libelle": "Elle voit ses rides s’installer",
+            "code": "B_RIDES"
+          },
+          {
+            "id": "b_inconnu",
+            "libelle": "Je ne sais pas",
+            "code": "B_INCONNU"
+          }
+        ]
+      },
+      {
+        "id": "b3_intention",
+        "numero": 3,
+        "libelle": "Votre intention :",
+        "aide": null,
+        "reponses": [
+          {
+            "id": "b_complet",
+            "libelle": "Un rituel complet",
+            "code": "I_COMPLET"
+          },
+          {
+            "id": "b_legere",
+            "libelle": "Une attention plus légère",
+            "code": "I_LEGERE"
+          }
+        ]
+      }
+    ],
+    "_lisez_moi_regles": "La premiere regle dont toutes les conditions sont vraies determine le coffret. La derniere ligne, sans condition, est le choix par defaut.",
+    "regles": [
+      {
+        "rang": 1,
+        "si_codes": [
+          "B_ECLAT"
+        ],
+        "coffret": "coffret-eclat",
+        "profil_associe": "teint_terne"
+      },
+      {
+        "rang": 2,
+        "si_codes": [
+          "B_SECHE"
+        ],
+        "coffret": "coffret-hydratation",
+        "profil_associe": "peau_assoiffee"
+      },
+      {
+        "rang": 3,
+        "si_codes": [
+          "B_RIDES",
+          "A_PLUS50"
+        ],
+        "coffret": "coffret-anti-age",
+        "profil_associe": "ovale_qui_se_relache"
+      },
+      {
+        "rang": 4,
+        "si_codes": [
+          "B_RIDES"
+        ],
+        "coffret": "coffret-rides-fermete",
+        "profil_associe": "rides_installees"
+      },
+      {
+        "rang": 5,
+        "si_codes": [
+          "B_INCONNU",
+          "A_MOINS35"
+        ],
+        "coffret": "coffret-eclat",
+        "profil_associe": "teint_terne"
+      },
+      {
+        "rang": 6,
+        "si_codes": [
+          "B_INCONNU",
+          "A_35_50"
+        ],
+        "coffret": "coffret-hydratation",
+        "profil_associe": "peau_assoiffee"
+      },
+      {
+        "rang": 7,
+        "si_codes": [
+          "B_INCONNU",
+          "A_PLUS50"
+        ],
+        "coffret": "coffret-anti-age",
+        "profil_associe": "ovale_qui_se_relache"
+      },
+      {
+        "rang": 8,
+        "si_codes": [],
+        "coffret": "coffret-eclat",
+        "profil_associe": "teint_terne"
+      }
+    ],
+    "mention_cheque_cadeau": {
+      "si_code": "I_LEGERE",
+      "texte": "Le chèque-cadeau Révélation Beauté, à composer avec nous à l’accueil."
+    },
+    "intitules": {
+      "titre_resultat": "Votre idée cadeau",
+      "intro": "D’après ce que vous nous dites de sa peau, voici ce que nous lui conseillerions."
+    }
+  },
+  "_lisez_moi_rituel": "Les etapes du rituel, dans l'ordre d'affichage. L'etape marquee selon_profil prend les produits du profil. sauf_si_profil retire l'etape pour les profils cites. produit_selon choisit un produit d'apres les reponses.",
+  "etapes_rituel": [
+    {
+      "id": "demaquiller",
+      "titre": "Démaquiller",
+      "note": "Matin et soir, en deux temps.",
+      "gamme": "Ella Perfect",
+      "produits": [
+        "huile-tomate-demaquillante"
+      ],
+      "produit_selon": {
+        "_lisez_moi": "Un produit choisi selon les réponses : la premiere regle vraie gagne. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [
+              "H2"
+            ],
+            "produit": "lait-tomate-demaquillant"
+          },
+          {
+            "si_codes": [
+              "R2"
+            ],
+            "produit": "lait-tomate-demaquillant"
+          },
+          {
+            "si_codes": [
+              "S0"
+            ],
+            "produit": "lait-tomate-demaquillant"
+          },
+          {
+            "si_codes": [],
+            "produit": "eau-tomate-demaquillante"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nettoyer",
+      "titre": "Nettoyer",
+      "note": "Matin et soir, après le démaquillage.",
+      "gamme": "Ella Perfect",
+      "produits": [
+        "mousseline-tomate-nettoyante",
+        "tonique-tomate-eclat"
+      ]
+    },
+    {
+      "id": "exfolier",
+      "titre": "Exfolier",
+      "note": "Une à deux fois par semaine.",
+      "gamme": "Ella Perfect",
+      "produits": [
+        "exfoliant-oleo-gel-tomate"
+      ],
+      "sauf_si_profil": [
+        "peau_reactive"
+      ]
+    },
+    {
+      "id": "traiter",
+      "titre": "Traiter",
+      "note": "Matin et soir, sur peau nette.",
+      "selon_profil": true
+    },
+    {
+      "id": "proteger",
+      "titre": "Protéger",
+      "note": "Chaque matin, pour finir.",
+      "gamme": "Protection",
+      "produits": [
+        "daily-uv-spf50"
+      ]
+    },
+    {
+      "id": "completer",
+      "titre": "Compléter",
+      "note": "En cure, à voir avec votre esthéticienne.",
+      "gamme": "Endermonutri",
+      "complement_du_profil": true
+    }
+  ],
+  "profils": {
+    "peau_reactive": {
+      "nom": "PEAU RÉACTIVE",
+      "code": "REA",
+      "peau_dit": "Je chauffe, je rougis, je réagis vite.",
+      "besoin": "Être apaisée et renforcée avant tout autre soin.",
+      "gamme_traiter": "Sensibeautics",
+      "produits_traiter": [
+        "serum-red-focus",
+        "creme-probiotiques-hydra-apaisante"
+      ],
+      "soin_regard": null,
+      "complement": null,
+      "coffret": null
+    },
+    "peau_brillante": {
+      "nom": "PEAU BRILLANTE",
+      "code": "BRI",
+      "peau_dit": "Je brille, mes pores se voient.",
+      "besoin": "Être purifiée et matifiée, sans être asséchée.",
+      "gamme_traiter": "Pur Aromatics",
+      "produits_traiter": [
+        "serum-sebatics",
+        "creme-detox-hydra-matifiante"
+      ],
+      "soin_regard": null,
+      "complement": null,
+      "coffret": null
+    },
+    "peau_assoiffee": {
+      "nom": "PEAU ASSOIFFÉE",
+      "code": "HYD",
+      "peau_dit": "Je tiraille, mes ridules apparaissent.",
+      "besoin": "Retrouver de l’eau et du rebond.",
+      "gamme_traiter": "Hydra Repulp",
+      "produits_traiter": [
+        "super-serum-hydra-repulpant",
+        "gel-creme-hydra-repulpant"
+      ],
+      "soin_regard": "soin-regard-hydra-repulpant",
+      "complement": "acide-hyaluronique",
+      "coffret": "coffret-hydratation"
+    },
+    "teint_terne": {
+      "nom": "TEINT TERNE",
+      "code": "ECL",
+      "peau_dit": "Je manque d’éclat, mon grain est irrégulier.",
+      "besoin": "Être lissée et révéler son éclat.",
+      "gamme_traiter": "Tomate Glow",
+      "produits_traiter": [
+        "essence-micro-peeling",
+        "creme-tomate-originale"
+      ],
+      "soin_regard": "soin-regard-renovateur-eclat",
+      "complement": null,
+      "coffret": "coffret-eclat"
+    },
+    "rides_installees": {
+      "nom": "RIDES INSTALLÉES",
+      "code": "RID",
+      "peau_dit": "Mes rides se sont marquées.",
+      "besoin": "Être comblée et raffermie.",
+      "gamme_traiter": "Green Filler",
+      "produits_traiter": [
+        "super-serum-micro-combleur",
+        "creme-micro-comblante"
+      ],
+      "soin_regard": "soin-regard-micro-combleur",
+      "complement": "collagene-elastine",
+      "coffret": "coffret-rides-fermete"
+    },
+    "ovale_qui_se_relache": {
+      "nom": "OVALE QUI SE RELÂCHE",
+      "code": "OVA",
+      "peau_dit": "Mes contours perdent en netteté.",
+      "besoin": "Retrouver densité et tenue.",
+      "gamme_traiter": "Morphostructure",
+      "produits_traiter": [
+        "super-serum-pro-liftant",
+        "creme-riche-pro-liftante"
+      ],
+      "soin_regard": "skinissime-creme-regard",
+      "complement": "collagenity-pro-age",
+      "coffret": "coffret-anti-age"
+    }
+  },
+  "intitules_ordonnance": {
+    "entete": "Lecture de peau",
+    "peau_dit": "Votre peau dit :",
+    "besoin": "Ce dont elle a besoin :",
+    "rituel": "Votre rituel Révélation",
+    "soin_regard": "Pour le regard",
+    "pont_coffret": "Voilà ce que nous vous conseillons. Si vous souhaitez réunir ces soins en une fois :",
+    "coffret": "Votre coffret de Noël",
+    "duo": "Votre duo de soins",
+    "mention_marque": "Soins {marques} sélectionnés par Révélation Beauté",
+    "signature": "L’équipe Révélation Beauté",
+    "_mention_marque": "{marques} est remplace par les marques reellement proposees, par exemple « Ella Baché » ou « Ella Baché et LPG »."
+  },
+  "appel_action": {
+    "titre": "Présentez cet écran à l’accueil.",
+    "texte": "Nous composons votre rituel avec vous, à votre rythme.",
+    "bouton_recommencer": "RECOMMENCER"
+  },
+  "collecte_email": {
+    "titre": "Recevez votre ordonnance de peau",
+    "sous_titre": "Et participez au tirage au sort d’un coffret Révélation Beauté.",
+    "champ_prenom": "Prénom",
+    "champ_email": "Email",
+    "champ_anniversaire": "Anniversaire (jour et mois, facultatif)",
+    "consentement_obligatoire": "J’accepte que Révélation Beauté conserve mes réponses pour me conseiller lors de mes prochaines visites.",
+    "consentement_facultatif": "J’accepte de recevoir les actualités de l’institut par email.",
+    "bouton": "RECEVOIR MON ORDONNANCE",
+    "lien_confidentialite": "Confidentialité",
+    "confirmation": "C’est noté. Votre ordonnance de peau vous attend dans votre boîte email."
+  }
+}

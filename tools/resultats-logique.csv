@@ -1,0 +1,457 @@
+branche;codes;profil;bloc_affiche;prix_affiche;soin_regard;note
+A;R2 S2 H2 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H2 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S2 H2 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S2 H1 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H1 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S2 H1 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S2 H0 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S2 H0 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S2 H0 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H2 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H2 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H2 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H1 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H1 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H1 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H0 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S1 H0 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S1 H0 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H2 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H2 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H2 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H1 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H1 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H1 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H0 P_RIDES Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_OVALE Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_OVALE Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_OVALE P_ECLAT Y1;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_RIDES P_OVALE P_ECLAT Y0;PEAU RÉACTIVE;Votre duo de soins;;;sensibilité ponctuelle
+A;R2 S0 H0 P_AUCUN Y1;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R2 S0 H0 P_AUCUN Y0;PEAU RÉACTIVE;Votre duo de soins;;;
+A;R1 S2 H2 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H2 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H1 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S2 H0 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H2 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H2 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S1 H1 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S1 H1 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S1 H1 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H1 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H1 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S1 H1 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S1 H0 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S1 H0 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S1 H0 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S1 H0 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S1 H0 P_AUCUN Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S1 H0 P_AUCUN Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H2 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H2 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S0 H1 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S0 H1 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S0 H1 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H1 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H1 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R1 S0 H1 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S0 H0 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S0 H0 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R1 S0 H0 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R1 S0 H0 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R1 S0 H0 P_AUCUN Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;sensibilité ponctuelle
+A;R1 S0 H0 P_AUCUN Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H2 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S2 H2 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S2 H1 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H1 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S2 H1 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S2 H0 P_RIDES Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_OVALE Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_OVALE Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_OVALE P_ECLAT Y1;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_RIDES P_OVALE P_ECLAT Y0;PEAU BRILLANTE;Votre duo de soins;;;sensibilité ponctuelle
+A;R0 S2 H0 P_AUCUN Y1;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S2 H0 P_AUCUN Y0;PEAU BRILLANTE;Votre duo de soins;;;
+A;R0 S1 H2 P_RIDES Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S1 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S1 H2 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;
+A;R0 S1 H2 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;
+A;R0 S1 H1 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;
+A;R0 S1 H1 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+A;R0 S1 H1 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;
+A;R0 S1 H1 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;
+A;R0 S1 H1 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H1 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H1 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S1 H1 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+A;R0 S1 H1 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H1 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H1 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R0 S1 H1 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R0 S1 H1 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H1 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H1 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;
+A;R0 S1 H1 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;
+A;R0 S1 H0 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;
+A;R0 S1 H0 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+A;R0 S1 H0 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;
+A;R0 S1 H0 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;
+A;R0 S1 H0 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H0 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H0 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S1 H0 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+A;R0 S1 H0 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H0 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H0 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R0 S1 H0 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R0 S1 H0 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S1 H0 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S1 H0 P_AUCUN Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S1 H0 P_AUCUN Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+A;R0 S0 H2 P_RIDES Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_OVALE Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_OVALE Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_OVALE P_ECLAT Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;sensibilité ponctuelle
+A;R0 S0 H2 P_RIDES P_OVALE P_ECLAT Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;sensibilité ponctuelle
+A;R0 S0 H2 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;
+A;R0 S0 H2 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;
+A;R0 S0 H1 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;
+A;R0 S0 H1 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+A;R0 S0 H1 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;
+A;R0 S0 H1 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;
+A;R0 S0 H1 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H1 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H1 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S0 H1 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+A;R0 S0 H1 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H1 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H1 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R0 S0 H1 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R0 S0 H1 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H1 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H1 P_AUCUN Y1;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;Soin Regard Hydra-Repulpant;
+A;R0 S0 H1 P_AUCUN Y0;PEAU ASSOIFFÉE;L’Instant Précieux — Hydratation;85,00 €;;
+A;R0 S0 H0 P_RIDES Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;
+A;R0 S0 H0 P_RIDES Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+A;R0 S0 H0 P_OVALE Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;
+A;R0 S0 H0 P_OVALE Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;
+A;R0 S0 H0 P_RIDES P_OVALE Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H0 P_RIDES P_OVALE Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H0 P_ECLAT Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S0 H0 P_ECLAT Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+A;R0 S0 H0 P_RIDES P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H0 P_RIDES P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H0 P_OVALE P_ECLAT Y1;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;Skinissime Crème Regard Totale Sublimatrice;sensibilité ponctuelle
+A;R0 S0 H0 P_OVALE P_ECLAT Y0;OVALE QUI SE RELÂCHE;L’Instant Précieux — Anti-Âge;113,00 €;;sensibilité ponctuelle
+A;R0 S0 H0 P_RIDES P_OVALE P_ECLAT Y1;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;Soin Regard Micro-Combleur;sensibilité ponctuelle
+A;R0 S0 H0 P_RIDES P_OVALE P_ECLAT Y0;RIDES INSTALLÉES;L’Instant Précieux — Rides & Fermeté;104,00 €;;sensibilité ponctuelle
+A;R0 S0 H0 P_AUCUN Y1;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;Soin Regard Rénovateur Éclat;
+A;R0 S0 H0 P_AUCUN Y0;TEINT TERNE;L’Instant Précieux — Éclat;125,00 €;;
+B;A_MOINS35 B_ECLAT I_COMPLET;;L’Instant Précieux — Éclat;125,00 €;;
+B;A_MOINS35 B_ECLAT I_LEGERE;;L’Instant Précieux — Éclat;125,00 €;;chèque-cadeau proposé
+B;A_MOINS35 B_SECHE I_COMPLET;;L’Instant Précieux — Hydratation;85,00 €;;
+B;A_MOINS35 B_SECHE I_LEGERE;;L’Instant Précieux — Hydratation;85,00 €;;chèque-cadeau proposé
+B;A_MOINS35 B_RIDES I_COMPLET;;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+B;A_MOINS35 B_RIDES I_LEGERE;;L’Instant Précieux — Rides & Fermeté;104,00 €;;chèque-cadeau proposé
+B;A_MOINS35 B_INCONNU I_COMPLET;;L’Instant Précieux — Éclat;125,00 €;;
+B;A_MOINS35 B_INCONNU I_LEGERE;;L’Instant Précieux — Éclat;125,00 €;;chèque-cadeau proposé
+B;A_35_50 B_ECLAT I_COMPLET;;L’Instant Précieux — Éclat;125,00 €;;
+B;A_35_50 B_ECLAT I_LEGERE;;L’Instant Précieux — Éclat;125,00 €;;chèque-cadeau proposé
+B;A_35_50 B_SECHE I_COMPLET;;L’Instant Précieux — Hydratation;85,00 €;;
+B;A_35_50 B_SECHE I_LEGERE;;L’Instant Précieux — Hydratation;85,00 €;;chèque-cadeau proposé
+B;A_35_50 B_RIDES I_COMPLET;;L’Instant Précieux — Rides & Fermeté;104,00 €;;
+B;A_35_50 B_RIDES I_LEGERE;;L’Instant Précieux — Rides & Fermeté;104,00 €;;chèque-cadeau proposé
+B;A_35_50 B_INCONNU I_COMPLET;;L’Instant Précieux — Hydratation;85,00 €;;
+B;A_35_50 B_INCONNU I_LEGERE;;L’Instant Précieux — Hydratation;85,00 €;;chèque-cadeau proposé
+B;A_PLUS50 B_ECLAT I_COMPLET;;L’Instant Précieux — Éclat;125,00 €;;
+B;A_PLUS50 B_ECLAT I_LEGERE;;L’Instant Précieux — Éclat;125,00 €;;chèque-cadeau proposé
+B;A_PLUS50 B_SECHE I_COMPLET;;L’Instant Précieux — Hydratation;85,00 €;;
+B;A_PLUS50 B_SECHE I_LEGERE;;L’Instant Précieux — Hydratation;85,00 €;;chèque-cadeau proposé
+B;A_PLUS50 B_RIDES I_COMPLET;;L’Instant Précieux — Anti-Âge;113,00 €;;
+B;A_PLUS50 B_RIDES I_LEGERE;;L’Instant Précieux — Anti-Âge;113,00 €;;chèque-cadeau proposé
+B;A_PLUS50 B_INCONNU I_COMPLET;;L’Instant Précieux — Anti-Âge;113,00 €;;
+B;A_PLUS50 B_INCONNU I_LEGERE;;L’Instant Précieux — Anti-Âge;113,00 €;;chèque-cadeau proposé

@@ -1,0 +1,6 @@
+Déposez ici vos photos telles qu'elles sortent du téléphone,
+sans retouche et sans renommage.
+
+Fond uni Crème Amande ou Parchemin, lumière de fenêtre, produit bien droit.
+Le détourage, la mise au même format et la conversion en .webp se font
+ensuite en une passe, et les fichiers finis vont dans le dossier au-dessus.

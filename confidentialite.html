@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité — Révélation Beauté</title>
+<meta name="description" content="Ce que Révélation Beauté fait des réponses recueillies lors de la lecture de peau.">
+<meta name="theme-color" content="#3D3B3A">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=League+Spartan:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/logo/rb-monogramme-charbon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="page">
+  <main class="scene texte-long">
+
+    <img class="monogramme" src="assets/logo/rb-monogramme-charbon.svg" alt="Révélation Beauté" width="52" height="45">
+    <p class="surtitre" style="margin-top:2rem">Lecture de peau</p>
+    <h1>Confidentialité</h1>
+    <hr class="filet">
+
+    <p>Cette page explique ce que nous faisons des réponses que vous nous confiez
+    pendant la lecture de peau, et comment les retirer quand vous le souhaitez.</p>
+
+    <h2>Qui conserve vos réponses</h2>
+    <p>Révélation Beauté<br>
+    Rue des Français 289/02<br>
+    4430 Ans, Belgique</p>
+
+    <h2>Ce que nous conservons</h2>
+    <ul>
+      <li>Vos réponses aux questions de la lecture de peau.</li>
+      <li>Le profil de peau et le rituel qui en découlent, ainsi que le numéro de lecture.</li>
+      <li>Votre prénom et votre adresse email, si vous nous les donnez.</li>
+      <li>Le jour et le mois de votre anniversaire, si vous nous les donnez.</li>
+      <li>La date de la lecture et l’endroit d’où vous l’avez ouverte dans l’institut.</li>
+    </ul>
+
+    <h2>À quoi cela nous sert</h2>
+    <p>À vous envoyer votre ordonnance de peau, et à vous conseiller lors de vos
+    prochaines visites sans vous faire tout recommencer. Si vous avez coché la
+    seconde case, à vous envoyer les actualités de l’institut.</p>
+    <p>Vos réponses ne sont ni vendues, ni transmises à une marque. Elles restent
+    dans l’institut.</p>
+
+    <h2>Combien de temps</h2>
+    <p>Trois ans à compter de votre dernière visite, après quoi elles sont supprimées.</p>
+
+    <h2>Vos droits</h2>
+    <p>Vous pouvez à tout moment demander à consulter ce que nous avons noté, à le
+    corriger ou à le faire effacer. Il suffit de le demander à l’accueil de
+    l’institut<span id="contact-email"></span>. Nous le faisons sans vous demander
+    de justification.</p>
+
+    <h2>Cookies</h2>
+    <p>Cette page n’utilise aucun cookie, aucun traceur publicitaire et aucune mesure
+    d’audience.</p>
+
+    <div class="retour">
+      <a class="bouton bouton--second" href="index.html">Retour à la lecture</a>
+    </div>
+
+  </main>
+
+  <footer class="bandeau">
+    <img class="monogramme monogramme--bandeau" src="assets/logo/rb-monogramme-blanc.svg" alt="" width="40" height="35">
+    <p class="bandeau__depuis">Depuis 2005</p>
+  </footer>
+</div>
+
+<script>
+/* L’adresse email de contact vient de data/config.json.
+   Tant qu’elle n’y est pas renseignee, la page ne mentionne que l’accueil. */
+fetch('data/config.json', { cache: 'no-cache' })
+  .then(function (r) { return r.json(); })
+  .then(function (config) {
+    if (!config.email_contact) return;
+    var cible = document.getElementById('contact-email');
+    cible.appendChild(document.createTextNode(', ou par email à '));
+    var lien = document.createElement('a');
+    lien.href = 'mailto:' + config.email_contact;
+    lien.textContent = config.email_contact;
+    cible.appendChild(lien);
+  })
+  .catch(function () { /* la page reste lisible sans */ });
+</script>
+</body>
+</html>
