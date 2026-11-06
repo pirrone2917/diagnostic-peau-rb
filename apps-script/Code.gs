@@ -22,7 +22,7 @@ var EMAIL_INSTITUT = '';
  *  'https://revelationbeaute.github.io/diagnostic-peau/'.
  *  Sert à afficher le monogramme dans les emails. Laissez vide tant que
  *  le site n'est pas publié : l'email reste impeccable, sans l'image. */
-var URL_SITE = '';
+var URL_SITE = 'https://pirrone2917.github.io/diagnostic-peau-rb/';
 
 /* ============================================================
    À partir d'ici, rien à modifier.
@@ -69,13 +69,19 @@ var COL_ENVOI = 19;        // S
 /* ------------------------------------------------------------ Réception */
 
 function doPost(e) {
+  // Un seul enregistrement à la fois : évite deux lignes pour la même lecture
+  // quand deux envois arrivent presque en même temps.
+  var verrou = LockService.getScriptLock();
   try {
+    verrou.waitLock(20000);
     var donnees = JSON.parse(e.postData.contents);
     enregistrer(donnees);
     return reponse({ ok: true });
   } catch (erreur) {
     console.error(erreur);
     return reponse({ ok: false });
+  } finally {
+    try { verrou.releaseLock(); } catch (ignore) {}
   }
 }
 
