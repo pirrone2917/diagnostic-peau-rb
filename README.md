@@ -101,6 +101,10 @@ Section `etapes_rituel` : six étapes, dans l'ordre d'affichage.
 | Protéger | chaque matin | Le Daily UV SPF 50+ |
 | Compléter | en cure | le complément alimentaire du profil |
 
+Sept profils sont possibles. Le septième, **Peau à régénérer**, correspond à la
+gamme Rejuvenium : il se déclenche quand la cliente coche « Des taches brunes,
+un teint irrégulier » à la question 4.
+
 Trois réglages utiles sur une étape :
 
 - `produit_selon` choisit un produit d'après les réponses. C'est ainsi que le
@@ -255,6 +259,12 @@ S'ils affichent `OK` partout, vous pouvez mettre en ligne.
 
 ---
 
+> **Si vous modifiez `css/style.css` ou un fichier de `js/`**, changez aussi la
+> date écrite après `?v=` dans `index.html` et `confidentialite.html`, et renvoyez
+> ces deux pages. Sans cela, le navigateur d'une cliente déjà venue continue
+> d'afficher l'ancienne version pendant des jours. Les fichiers de `data/`, eux,
+> sont relus à chaque ouverture : aucune manipulation.
+
 ## 9. Mettre le site en ligne (GitHub Pages, gratuit)
 
 **1.** Créez un compte sur [github.com](https://github.com) si besoin.
@@ -297,6 +307,15 @@ Pour ajouter une source, modifiez `sources_trafic` dans `data/config.json`
 
 ## 11. Ce qui attend encore une décision
 
+- **Rejuvenium** : seule *La Crème Pro-Régénérative* est marquée disponible.
+  Le Super Sérum, la Crème Riche, le Soin Yeux & Lèvres et le Masque Bio-Cellulose
+  sont au catalogue avec `disponible: false` — passez-les à `true` à réception.
+  Aucun n'a de prix : ils ne sont pas encore dans l'export de caisse.
+- **L'ordre de priorité du profil « Peau à régénérer » est à confirmer.** Je l'ai
+  placé avant Rides installées et Ovale qui se relâche, parce qu'Ella Baché
+  classe Rejuvenium en grade 3 — une approche globale qui englobe rides, fermeté,
+  éclat et taches — là où Green Filler et Morphostructure sont en grade 2.
+  Pour le déplacer : `branche_a` → `priorites` dans `data/diagnostic.json`.
 - `email_contact` est à `null` dans `data/config.json`.
 - `EMAIL_INSTITUT` et `URL_SITE` sont vides dans `apps-script/Code.gs`.
 - Le contenu des coffrets Hydratation, Rides & Fermeté et Anti-Âge est à `null`,
