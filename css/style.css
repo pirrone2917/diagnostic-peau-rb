@@ -422,6 +422,15 @@ img { max-width: 100%; display: block; border: 0; }
   margin-top: 0.1875rem;
   opacity: 0.8;
 }
+/* La phrase de la gamme : ce que la cliente pourra citer à son esthéticienne. */
+.rituel__resume {
+  font-family: var(--titre);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  opacity: 0.86;
+}
+
 .rituel__produits {
   list-style: none;
   margin: 0.625rem 0 0;
