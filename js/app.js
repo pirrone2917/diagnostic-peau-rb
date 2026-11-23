@@ -329,7 +329,9 @@
       h += '<li><p class="rituel__numero">' + etape.numero + '.</p><div>'
         + '<p class="rituel__titre">' + echappe(etape.titre) + '</p>'
         + (etape.note ? '<p class="rituel__note">' + echappe(etape.note) + '</p>' : '')
-        + '<p class="rituel__gamme">' + echappe(etape.gamme) + '</p></div>'
+        + '<p class="rituel__gamme">' + echappe(etape.gamme) + '</p>'
+        + (etape.resume ? '<p class="rituel__resume">' + echappe(etape.resume) + '</p>' : '')
+        + '</div>'
         + '<ul class="rituel__produits">';
       etape.produits.forEach(function (p) { h += '<li>' + htmlProduit(p.produit) + '</li>'; });
       h += '</ul></li>';

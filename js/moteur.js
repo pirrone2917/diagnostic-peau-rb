@@ -183,6 +183,11 @@
       if (choisi) ids.push(choisi);
 
       var etape = composer(retenues.length + 1, modele.titre, modele.note, gamme, ids, produits);
+
+      // Seule l'étape « Traiter » porte le résumé de la gamme : c'est celle
+      // sur laquelle la cliente interrogera son esthéticienne.
+      if (modele.selon_profil) etape.resume = resumeGamme(gamme, produits);
+
       if (etape.produits.length) retenues.push(etape);
     }
     return retenues;
@@ -204,13 +209,19 @@
     return null;
   }
 
+  /** La phrase de la gamme, vérifiée sur la documentation de la marque. */
+  function resumeGamme(gamme, produits) {
+    var fiches = produits.gammes || {};
+    return fiches[gamme] && fiches[gamme].resume ? fiches[gamme].resume : '';
+  }
+
   function composer(numero, titre, note, gamme, ids, produits) {
     var retenus = [];
     for (var i = 0; i < (ids || []).length; i++) {
       var fiche = produits.produits[ids[i]];
       if (fiche && fiche.disponible === true) retenus.push({ id: ids[i], produit: fiche });
     }
-    return { numero: numero, titre: titre, note: note || '', gamme: gamme, produits: retenus };
+    return { numero: numero, titre: titre, note: note || '', gamme: gamme, resume: '', produits: retenus };
   }
 
   /* ----------------------------------------------------------- Code de lecture */
@@ -293,6 +304,7 @@
           titre: etape.titre,
           note: etape.note,
           gamme: etape.gamme,
+          resume: etape.resume,
           produits: etape.produits.map(function (p) { return nomComplet(p.produit); })
         });
       });
