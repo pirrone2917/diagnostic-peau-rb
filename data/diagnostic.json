@@ -131,6 +131,12 @@
             "mention": "un teint terne"
           },
           {
+            "id": "p_taches",
+            "libelle": "Des taches brunes, un teint irrégulier",
+            "code": "P_TACHES",
+            "mention": "des taches et un teint irrégulier"
+          },
+          {
             "id": "p_aucun",
             "libelle": "Rien de particulier",
             "code": "P_AUCUN",
@@ -176,26 +182,31 @@
       },
       {
         "rang": 4,
+        "si_code": "P_TACHES",
+        "profil": "peau_a_regenerer"
+      },
+      {
+        "rang": 5,
         "si_code": "P_RIDES",
         "profil": "rides_installees"
       },
       {
-        "rang": 5,
+        "rang": 6,
         "si_code": "P_OVALE",
         "profil": "ovale_qui_se_relache"
       },
       {
-        "rang": 6,
+        "rang": 7,
         "si_code": "P_ECLAT",
         "profil": "teint_terne"
       },
       {
-        "rang": 7,
+        "rang": 8,
         "si_code": "H1",
         "profil": "peau_assoiffee"
       },
       {
-        "rang": 8,
+        "rang": 9,
         "si_code": null,
         "profil": "teint_terne"
       }
@@ -524,6 +535,20 @@
       "soin_regard": "soin-regard-micro-combleur",
       "complement": "collagene-elastine",
       "coffret": "coffret-rides-fermete"
+    },
+    "peau_a_regenerer": {
+      "nom": "PEAU À RÉGÉNÉRER",
+      "code": "REG",
+      "peau_dit": "Mes traits se creusent, mon teint n’est plus uniforme.",
+      "besoin": "Être régénérée sur tous les fronts à la fois.",
+      "gamme_traiter": "Rejuvenium",
+      "produits_traiter": [
+        "super-serum-pro-regeneratif",
+        "creme-pro-regenerative"
+      ],
+      "soin_regard": "soin-pro-regeneratif-yeux-levres",
+      "complement": "collagenity-pro-age",
+      "coffret": null
     },
     "ovale_qui_se_relache": {
       "nom": "OVALE QUI SE RELÂCHE",

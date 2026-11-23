@@ -293,6 +293,61 @@
       "disponible": true,
       "image": "collagenity-pro-age.webp",
       "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
+    },
+    "super-serum-pro-regeneratif": {
+      "nom": "Le Super Sérum Pro-Régénératif",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Rejuvenium",
+      "besoin": "Régénération",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "super-serum-pro-regeneratif.webp",
+      "remarque": "Gamme Rejuvenium. Pas encore au catalogue de l’institut : passer disponible à true à réception."
+    },
+    "creme-pro-regenerative": {
+      "nom": "La Crème Pro-Régénérative",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Rejuvenium",
+      "besoin": "Régénération",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "creme-pro-regenerative.webp",
+      "remarque": "Gamme Rejuvenium. Nouveauté annoncée. Prix à renseigner par l’institut."
+    },
+    "creme-riche-pro-regenerative": {
+      "nom": "La Crème Riche Pro-Régénérative",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Rejuvenium",
+      "besoin": "Régénération",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-riche-pro-regenerative.webp",
+      "remarque": "Version riche, pour les peaux sèches. À activer si l’institut la référence."
+    },
+    "soin-pro-regeneratif-yeux-levres": {
+      "nom": "Le Soin Pro-Régénératif Yeux & Lèvres",
+      "marque": "Ella Baché",
+      "contenance": null,
+      "gamme": "Rejuvenium",
+      "besoin": "Régénération",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "soin-pro-regeneratif-yeux-levres.webp",
+      "remarque": "Soin regard de la gamme Rejuvenium. À activer à réception."
+    },
+    "masque-bio-cellulose-pro-regeneratif": {
+      "nom": "Le Masque Bio-Cellulose Pro-Régénératif",
+      "marque": "Ella Baché",
+      "contenance": null,
+      "gamme": "Rejuvenium",
+      "besoin": "Régénération",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "masque-bio-cellulose-pro-regeneratif.webp",
+      "remarque": "Masque, hors rituel quotidien. À activer si l’institut le référence."
     }
   },
   "coffrets": {
@@ -373,6 +428,51 @@
       "lien_rituel": null,
       "remarque": "Hors saison de Noël : jamais proposé tant que la saison active est « noel ».",
       "marque": "Ella Baché"
+    }
+  },
+  "_lisez_moi_gammes": "Une phrase par gamme, affichee sous l'etape « Traiter » de l'ordonnance. Elle est ecrite dans la voix de l'institut, mais son contenu est verifie : le champ position_ella_bache garde la formulation officielle de la marque et l'adresse de la page d'ou elle vient, pour que l'estheticienne puisse controler. Ces deux champs ne sont jamais affiches.",
+  "gammes": {
+    "Sensibeautics": {
+      "resume": "Des prébiotiques de betterave pour apaiser les peaux sensibles et renforcer leurs défenses.",
+      "position_ella_bache": "Les soins a base de Prebiotiques de Betterave qui ameliorent et renforcent les defenses naturelles des peaux sensibles. Peau apaisee. Rougeurs diminuees.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/39-sensibeautics"
+    },
+    "Pur Aromatics": {
+      "resume": "De l’huile essentielle de thym pour purifier les peaux mixtes à grasses et resserrer les pores.",
+      "position_ella_bache": "Les soins purifiants a base d'Huile Essentielle de Thym pour les peaux mixtes a grasses. La peau est purifiee, les imperfections et pores reduits.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/41-pur-aromatics"
+    },
+    "Hydra Repulp": {
+      "resume": "De l’acide hyaluronique auto-vectorisé, qui agit sur les trois dimensions de la déshydratation.",
+      "position_ella_bache": "Les soins a base d'Acide Hyaluronique Auto-vectorise nouvelle generation pour agir sur les 3 dimensions de la deshydratation.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/35-hydra-repulp"
+    },
+    "Tomate Glow": {
+      "resume": "Les antioxydants de tomate, inspirés des techniques de méso-peeling, pour lisser et raviver le teint.",
+      "position_ella_bache": "Soins inspires des techniques dermo-esthetiques de meso-peeling, a base d'antioxydants de Tomate, pour un teint eclatant & une peau visiblement lissee.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/302-tomate-glow"
+    },
+    "Green Filler": {
+      "resume": "Du pro-collagène de maca et des micro-nutriments de spiruline pour combler les rides et raffermir.",
+      "position_ella_bache": "Les soins anti-rides et raffermissants a base de pro-collagene de Maca et micro-nutriments de Spiruline. Rides et ridules comblees, peau plus ferme.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/300-green-filler"
+    },
+    "Morphostructure": {
+      "resume": "Une double action lift et densité, pour remettre la peau en tension et remodeler les volumes du visage.",
+      "position_ella_bache": "Un veritable concentre a la double action lift-densite pour remettre la peau en tension et remodeler les volumes du visage.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/314-morphostructure"
+    },
+    "Rejuvenium": {
+      "resume": "Une approche anti-âge globale, mise au point avec un médecin esthétique, sur les dix signes de l’âge.",
+      "position_ella_bache": "Soins inspires par la medecine anti-age de longevite & developpes en collaboration avec un medecin esthetique et anti-age pour agir sur les 10 signes de l'age.",
+      "verifie_le": "2026-11-23",
+      "source": "https://www.ellabache.com/37-rejuvenium"
     }
   }
 }

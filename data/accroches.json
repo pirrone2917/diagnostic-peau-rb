@@ -1,0 +1,81 @@
+{
+  "_lisez_moi": "Les accroches imprimees sur les cartes posees avec le cafe. Dix phrases, dix QR codes differents : la page d'arrivee est la meme, mais le tableau de bord du Google Sheet compte laquelle fait scanner. Pour modifier une phrase, changez seulement « ligne_1 », « ligne_2 » et « sous_titre ». Pour en ajouter une, copiez un bloc, donnez-lui un « src » qui n'existe pas encore, et ajoutez ce meme src dans sources_trafic de config.json. Relancez ensuite tools/qr.py.",
+
+  "meta": {
+    "version": "1.0",
+    "derniere_maj": "2026-11-23"
+  },
+
+  "_lisez_moi_lignes": "ligne_1 s'affiche en romain, ligne_2 en italique. Gardez des phrases courtes : deux lignes au maximum sur une carte de visite.",
+
+  "accroches": [
+    {
+      "src": "tasse-six-peaux",
+      "ligne_1": "Il y a six peaux.",
+      "ligne_2": "Laquelle est la vôtre ?",
+      "sous_titre": "Cinq questions, deux minutes"
+    },
+    {
+      "src": "tasse-peau-dit",
+      "ligne_1": "Votre peau",
+      "ligne_2": "vous dit quelque chose.",
+      "sous_titre": "Deux minutes pour savoir quoi"
+    },
+    {
+      "src": "tasse-pas-tout",
+      "ligne_1": "Votre peau n’a pas",
+      "ligne_2": "besoin de tout.",
+      "sous_titre": "Ce qu’il lui faut vraiment"
+    },
+    {
+      "src": "tasse-hiver",
+      "ligne_1": "Ce dont votre peau",
+      "ligne_2": "a besoin cet hiver.",
+      "sous_titre": "Le temps d’un café"
+    },
+    {
+      "src": "tasse-devine",
+      "ligne_1": "Ce que votre peau",
+      "ligne_2": "laisse deviner.",
+      "sous_titre": "Une lecture en cinq questions"
+    },
+    {
+      "src": "tasse-pas-l-age",
+      "ligne_1": "Et si ce n’était pas",
+      "ligne_2": "une question d’âge ?",
+      "sous_titre": "Cinq questions, deux minutes"
+    },
+    {
+      "src": "tasse-profil",
+      "ligne_1": "Votre peau a un profil.",
+      "ligne_2": "Le connaissez-vous ?",
+      "sous_titre": "Deux minutes pour le découvrir"
+    },
+    {
+      "src": "tasse-lire-avant",
+      "ligne_1": "Nous lisons la peau",
+      "ligne_2": "avant de la soigner.",
+      "sous_titre": "Commencez par la vôtre"
+    },
+    {
+      "src": "tasse-cafe",
+      "ligne_1": "Le temps d’un café,",
+      "ligne_2": "nous lisons votre peau.",
+      "sous_titre": "Cinq questions, deux minutes"
+    },
+    {
+      "src": "tasse-deux-minutes",
+      "ligne_1": "Cinq questions.",
+      "ligne_2": "Et nous saurons.",
+      "sous_titre": "Votre lecture de peau"
+    }
+  ],
+
+  "_lisez_moi_chevalet": "L'accroche reprise sur le chevalet de table. Son src est distinct pour separer l'effet de la phrase de celui de l'emplacement.",
+  "chevalet": {
+    "src": "chevalet-six-peaux",
+    "ligne_1": "Il y a six peaux.",
+    "ligne_2": "Laquelle est<br>la vôtre ?",
+    "sous_titre": "Cinq questions, deux minutes"
+  }
+}
