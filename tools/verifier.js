@@ -58,8 +58,10 @@ function fichiersTexte() {
     });
   })(racine);
 
-  // Ce fichier contient forcément la liste des mots interdits.
-  return retenus.filter(function (f) { return path.basename(f) !== 'verifier.js'; });
+  // Deux fichiers citent forcément les mots interdits : ce contrôle lui-même,
+  // et le cahier des charges, qui en donne la liste.
+  var horsControle = ['verifier.js', 'prompt-claude-code-diagnostic-rb.md'];
+  return retenus.filter(function (f) { return horsControle.indexOf(path.basename(f)) === -1; });
 }
 
 function relatif(fichier) { return path.relative(racine, fichier); }
@@ -243,8 +245,12 @@ function controleFichiers() {
     var motif = /(?:src|href)="(?!https?:|mailto:|#)([^"]+)"/g;
     var trouve;
     while ((trouve = motif.exec(contenu)) !== null) {
-      if (!fs.existsSync(path.join(racine, trouve[1]))) {
-        soucis.push('Fichier introuvable : ' + trouve[1] + ' appelé par ' + page);
+      // Les feuilles de style et les scripts portent un « ?v=… » qui force
+      // le navigateur à recharger : ce n'est pas une partie du nom de fichier.
+      var chemin = trouve[1].split('?')[0];
+      if (!chemin) continue;
+      if (!fs.existsSync(path.join(racine, chemin))) {
+        soucis.push('Fichier introuvable : ' + chemin + ' appelé par ' + page);
       }
     }
   });
@@ -272,6 +278,14 @@ function controleCoherence() {
     if (profil.coffret && !produits.coffrets[profil.coffret]) {
       soucis.push('Le profil « ' + profil.nom + ' » cite un coffret inconnu : ' + profil.coffret);
     }
+    var fiches = produits.gammes || {};
+    if (profil.gamme_traiter && !fiches[profil.gamme_traiter]) {
+      soucis.push('La gamme « ' + profil.gamme_traiter + ' » du profil « ' + profil.nom
+        + ' » n\'a pas de fiche vérifiée dans produits.json : l\'ordonnance n\'aura rien à dire dessus.');
+    } else if (profil.gamme_traiter && !fiches[profil.gamme_traiter].source) {
+      soucis.push('La gamme « ' + profil.gamme_traiter + ' » n\'indique pas sa source : '
+        + 'impossible de recontrôler ce qu\'elle affirme.');
+    }
     if (profil.complement && !produits.produits[profil.complement]) {
       soucis.push('Le profil « ' + profil.nom + ' » cite un complément inconnu : ' + profil.complement);
     }
@@ -293,8 +307,26 @@ function controleCoherence() {
         soucis.push('L\'étape « ' + etape.titre + ' » peut choisir un produit inconnu : ' + regle.produit);
       }
     });
+
+    // Un produit peut aussi être choisi par une table : selon la gamme du profil
+    // (le démaquillant) ou selon le profil lui-même (l'exfoliant).
+    var tables = [];
+    ['produit_selon_gamme', 'produit_selon_profil'].forEach(function (champ) {
+      var table = etape[champ];
+      if (!table) return;
+      Object.keys(table).forEach(function (cle) {
+        tables.push(table[cle]);
+        if (!produits.produits[table[cle]]) {
+          soucis.push('L\'étape « ' + etape.titre + ' » peut choisir un produit inconnu : ' + table[cle]);
+        }
+        if (champ === 'produit_selon_profil' && cle !== '_defaut' && !diagnostic.profils[cle]) {
+          soucis.push('L\'étape « ' + etape.titre + ' » vise un profil inconnu : ' + cle);
+        }
+      });
+    });
+
     if (!etape.selon_profil && !etape.complement_du_profil
-        && !(etape.produits || []).length && !choix.length) {
+        && !(etape.produits || []).length && !choix.length && !tables.length) {
       soucis.push('L\'étape « ' + etape.titre + ' » n\'a aucun produit.');
     }
     (etape.sauf_si_profil || []).forEach(function (id) {
@@ -311,6 +343,42 @@ function controleCoherence() {
   });
 }
 
+/* ------------------------- 8. Accroches imprimées et sources acceptées */
+
+/*
+ * Une carte dont le src manque dans config.json verrait ses scans comptés
+ * comme « inconnue » : le test d'accroches ne mesurerait plus rien.
+ */
+function controleAccroches() {
+  var fichier = path.join(racine, 'data', 'accroches.json');
+  if (!fs.existsSync(fichier)) return;
+
+  var accroches = JSON.parse(lire(fichier));
+  var config = JSON.parse(lire(path.join(racine, 'data', 'config.json')));
+  var acceptees = config.sources_trafic || [];
+
+  var tous = (accroches.accroches || []).map(function (a) { return a.src; });
+  if (accroches.chevalet) tous.push(accroches.chevalet.src);
+
+  tous.forEach(function (src) {
+    if (acceptees.indexOf(src) === -1) {
+      soucis.push('L\'accroche « ' + src + ' » n\'est pas dans sources_trafic de config.json : '
+        + 'ses scans seraient comptés comme « inconnue ».');
+    }
+    if (!fs.existsSync(path.join(racine, 'qr', 'qr-' + src + '.png'))) {
+      soucis.push('Il manque le QR code de l\'accroche « ' + src
+        + ' » : relancez tools/qr.py.');
+    }
+  });
+
+  var doublons = tous.filter(function (s, i) { return tous.indexOf(s) !== i; });
+  doublons.forEach(function (s) {
+    soucis.push('Deux accroches partagent le même src « ' + s + ' » : leurs scans se mélangeraient.');
+  });
+
+  remarques.push(tous.length + ' accroche(s) imprimée(s), chacune avec son propre QR code.');
+}
+
 /* ------------------------------------------------------------ Rapport */
 
 var fichiers = fichiersTexte();
@@ -320,6 +388,7 @@ controleOr();
 controlePrix();
 controleFichiers();
 controleCoherence();
+controleAccroches();
 
 console.log('');
 console.log('=== CONTRÔLES AVANT MISE EN LIGNE ===');
@@ -335,6 +404,8 @@ if (soucis.length === 0) {
   console.log('  [OK ] Aucun montant écrit en dur');
   console.log('  [OK ] Fichiers appelés présents');
   console.log('  [OK ] Données cohérentes');
+  console.log('  [OK ] Accroches imprimées et QR codes');
+  console.log('  [OK ] Gammes documentées et sourcées');
 } else {
   console.log('  ' + soucis.length + ' point(s) à corriger :');
   console.log('');

@@ -2,7 +2,8 @@
  * Test de la logique de lecture de peau — Révélation Beauté
  *
  * Fait tourner TOUTES les combinaisons de réponses possibles
- * (216 pour la branche A, 24 pour la branche B) à travers le moteur réel
+ * des sept questions de la branche A et des trois de la branche B,
+ * à travers le moteur réel
  * (js/moteur.js), celui-là même qui tourne dans l'application.
  *
  * Lancement :  node tools/test-logique.js
@@ -55,6 +56,12 @@ function combinaisons(codes) {
   return toutes;
 }
 var Y = codesDe('q5_regard', 'branche_a');
+var A_AGE = codesDe('q6_age', 'branche_a');
+
+/* La question 7 accepte plusieurs réponses, « Rien de tout cela » se coche seule. */
+var X = combinaisons(codesDe('q7_exposition', 'branche_a')
+  .filter(function (c) { return c !== 'X_AUCUN'; }))
+  .concat([['X_AUCUN']]);
 
 var AGE = codesDe('b1_age', 'branche_b');
 var PEAU = codesDe('b2_peau', 'branche_b');
@@ -65,26 +72,47 @@ var INTENTION = codesDe('b3_intention', 'branche_b');
 var lignesA = [];
 var erreurs = [];
 var reglesUtilisees = {};
+var grades = {};
 
 R.forEach(function (r) {
   S.forEach(function (s) {
     H.forEach(function (h) {
       P.forEach(function (p) {
         Y.forEach(function (y) {
-          var codes = [r, s, h].concat(p, [y]);
+        A_AGE.forEach(function (age) {
+        X.forEach(function (x) {
+          var codes = [r, s, h].concat(p, [y, age], x);
           var res = moteur.profilBrancheA(codes, diagnostic);
 
           if (!res) { erreurs.push('Aucun profil pour ' + codes.join(' ')); return; }
           reglesUtilisees[res.id] = (reglesUtilisees[res.id] || 0) + 1;
 
+          var lecture = moteur.grade(codes, diagnostic);
+          if (!lecture) { erreurs.push('Aucun grade pour ' + codes.join(' ')); return; }
+          if (lecture.niveau < 0 || lecture.niveau > diagnostic.branche_a.grades.maximum) {
+            erreurs.push('Grade hors echelle (' + lecture.niveau + ') pour ' + codes.join(' '));
+          }
+          if (!lecture.titre || !lecture.texte) {
+            erreurs.push('Palier de grade incomplet pour ' + codes.join(' '));
+          }
+          grades[lecture.niveau] = (grades[lecture.niveau] || 0) + 1;
+
           var coffret = moteur.coffretAffichable(res.profil.coffret, produits, config);
-          var etapes = moteur.rituel(res.profil, diagnostic, produits, codes, res.id);
+          var etapes = moteur.rituel(res.profil, diagnostic, produits, codes, res.id, lecture.niveau);
           var regard = res.soinRegardId ? produits.produits[res.soinRegardId] : null;
 
           // Controles de coherence
+          if (!etapes.length) {
+            erreurs.push('Rituel vide pour ' + res.profil.nom + ' (' + codes.join(' ') + ')');
+          }
           etapes.forEach(function (e) {
-            if (e.produits.length === 0) {
+            // Une etape peut n'avoir que des soins a commander : c'est voulu.
+            // Ce qui ne doit jamais arriver, c'est une etape sans aucun soin.
+            if (e.produits.length === 0 && e.manquants.length === 0) {
               erreurs.push('Etape « ' + e.titre + ' » vide pour ' + res.profil.nom + ' (' + codes.join(' ') + ')');
+            }
+            if (e.manquants.length && !e.note_manquants) {
+              erreurs.push('Soin a commander sans mention, etape « ' + e.titre + ' » (' + codes.join(' ') + ')');
             }
           });
           if (res.soinRegardId && !regard) {
@@ -97,6 +125,7 @@ R.forEach(function (r) {
           lignesA.push({
             codes: codes.join(' '),
             r: r, s: s, h: h, p: p.join('+'), y: y,
+            age: age, exposition: x.join('+'), grade: lecture.niveau,
             profil: res.profil.nom,
             code: res.profil.code,
             bloc: coffret ? coffret.coffret.nom : diagnostic.intitules_ordonnance.duo,
@@ -104,6 +133,8 @@ R.forEach(function (r) {
             regard: regard ? regard.nom : '',
             note: res.notes.length ? 'sensibilité ponctuelle' : ''
           });
+        });
+        });
         });
       });
     });
@@ -161,9 +192,12 @@ console.log('');
 console.log('=== BRANCHE A — profil obtenu selon les questions 1 a 4 ===');
 console.log('(la question 5 ne change pas le profil : elle ajoute seulement le soin regard)');
 console.log('');
+var colonnes = P_SIMPLES.map(function (code) {
+  return code.replace('P_', '').toLowerCase();
+});
 console.log(pad('Q1 réactivité', 14) + pad('Q2 brillance', 14) + pad('Q3 hydrat.', 12)
-  + pad('rides', 8) + pad('ovale', 8) + pad('éclat', 8) + pad('aucun', 8));
-console.log('-'.repeat(72));
+  + colonnes.map(function (c) { return pad(c, 8); }).join(''));
+console.log('-'.repeat(40 + colonnes.length * 8));
 
 var codesProfil = {};
 Object.keys(diagnostic.profils).forEach(function (id) {
@@ -210,6 +244,16 @@ Object.keys(diagnostic.profils).forEach(function (id) {
 });
 
 console.log('');
+console.log('=== L’ÉCHELLE DES GRADES ===');
+console.log('(l’âge donne le grade ; deux facteurs d’exposition le montent d’un cran)');
+console.log('');
+Object.keys(grades).sort().forEach(function (niveau) {
+  var palier = diagnostic.branche_a.grades.echelle[niveau];
+  console.log('  ' + pad(palier.titre, 10)
+    + pad(grades[niveau] + ' / ' + lignesA.length, 18) + palier.texte);
+});
+
+console.log('');
 console.log('=== BRANCHE B — offrir (les 24 combinaisons) ===');
 console.log('');
 console.log(pad('Âge', 16) + pad('Sa peau', 30) + pad('Intention', 26) + pad('Coffret', 34) + pad('Prix', 9) + 'Chèque');
@@ -234,13 +278,13 @@ fs.writeFileSync(path.join(__dirname, 'resultats-logique.csv'), lignesCsv.join('
 
 console.log('');
 console.log('=== CONTRÔLES ===');
-var attenduA = R.length * S.length * H.length * P.length * Y.length;
+var attenduA = R.length * S.length * H.length * P.length * Y.length * A_AGE.length * X.length;
 var attenduB = AGE.length * PEAU.length * INTENTION.length;
 verifier('Branche A : toutes les combinaisons donnent un profil', lignesA.length === attenduA,
   lignesA.length + ' / ' + attenduA);
 verifier('Branche B : toutes les combinaisons donnent un coffret', lignesB.length === attenduB,
   lignesB.length + ' / ' + attenduB);
-verifier('Les 6 profils sont atteignables', Object.keys(reglesUtilisees).length === Object.keys(diagnostic.profils).length,
+verifier('Tous les profils sont atteignables', Object.keys(reglesUtilisees).length === Object.keys(diagnostic.profils).length,
   Object.keys(reglesUtilisees).length + ' / ' + Object.keys(diagnostic.profils).length + ' profils atteints');
 verifier('Aucun prix de produit à l\'unité dans les résultats',
   lignesA.every(function (l) { return l.prix === '' || /€$/.test(l.prix); }), 'prix coffrets uniquement');

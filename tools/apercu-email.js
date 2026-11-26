@@ -32,19 +32,19 @@ function lire(chemin) {
 var CAS = {
   teint_terne: {
     titre: 'Teint terne, regard fatigué, sensibilité ponctuelle',
-    branche: 'a', codes: ['R1', 'S1', 'H0', 'P_ECLAT', 'Y1'], prenom: 'Claire'
+    branche: 'a', codes: ['R1', 'S1', 'H0', 'P_ECLAT', 'Y1', 'A1', 'X_POLLUTION'], prenom: 'Claire'
   },
   peau_reactive: {
     titre: 'Peau réactive (pas de coffret : duo de soins)',
-    branche: 'a', codes: ['R2', 'S1', 'H1', 'P_AUCUN', 'Y0'], prenom: 'Sophie'
+    branche: 'a', codes: ['R2', 'S1', 'H1', 'P_AUCUN', 'Y0', 'A0', 'X_AUCUN'], prenom: 'Sophie'
   },
   peau_assoiffee: {
     titre: 'Peau assoiffée, regard fatigué',
-    branche: 'a', codes: ['R0', 'S0', 'H2', 'P_AUCUN', 'Y1'], prenom: 'Nathalie'
+    branche: 'a', codes: ['R0', 'S0', 'H2', 'P_AUCUN', 'Y1', 'A2', 'X_SOLEIL', 'X_TABAC'], prenom: 'Nathalie'
   },
   rides: {
     titre: 'Rides installées',
-    branche: 'a', codes: ['R0', 'S1', 'H0', 'P_RIDES', 'Y1'], prenom: 'Martine'
+    branche: 'a', codes: ['R0', 'S1', 'H0', 'P_RIDES', 'Y1', 'A3', 'X_AUCUN'], prenom: 'Martine'
   },
   cadeau: {
     titre: 'Carte cadeau (branche « offrir »)',
@@ -84,6 +84,10 @@ function ordonnanceDe(cas) {
   return moteur.resumeOrdonnance({
     branche: cas.branche,
     resultat: resultat,
+    // Sans les codes ni le profil, le moteur ne peut ni situer le grade
+    // ni appliquer les règles qui dépendent du profil.
+    codes: cas.codes,
+    profilId: resultat ? resultat.id : null,
     diagnostic: diagnostic,
     produits: produits,
     config: config,
