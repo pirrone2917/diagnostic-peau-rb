@@ -81,22 +81,27 @@
       {
         "id": "q3_hydratation",
         "numero": 3,
-        "libelle": "Après le nettoyage, votre peau tiraille-t-elle ?",
-        "aide": "Voyez-vous de fines ridules qui s’estompent quand vous appliquez votre crème ?",
+        "libelle": "Comment votre peau se comporte-t-elle au quotidien ?",
+        "aide": "Une peau qui tiraille puis se calme manque d’eau. Une peau rêche en permanence manque de gras.",
         "reponses": [
           {
-            "id": "h_oui",
-            "libelle": "Oui",
+            "id": "h_tiraille",
+            "libelle": "Elle tiraille après le nettoyage, puis ça passe",
             "code": "H2"
           },
           {
+            "id": "n_seche",
+            "libelle": "Elle est rêche, elle pèle, inconfortable en permanence",
+            "code": "N2"
+          },
+          {
             "id": "h_parfois",
-            "libelle": "Parfois",
+            "libelle": "Cela dépend des saisons",
             "code": "H1"
           },
           {
             "id": "h_non",
-            "libelle": "Non",
+            "libelle": "Elle est confortable",
             "code": "H0"
           }
         ]
@@ -161,9 +166,74 @@
             "code": "Y0"
           }
         ]
+      },
+      {
+        "id": "q6_age",
+        "numero": 6,
+        "libelle": "Votre âge, pour situer votre peau :",
+        "aide": "Ella Baché gradue le vieillissement cutané par décennie. L’âge ne choisit pas vos soins : il aide à régler leur richesse.",
+        "reponses": [
+          {
+            "id": "a_moins30",
+            "libelle": "Moins de 30 ans",
+            "code": "A0"
+          },
+          {
+            "id": "a_30",
+            "libelle": "Entre 30 et 39 ans",
+            "code": "A1"
+          },
+          {
+            "id": "a_40",
+            "libelle": "Entre 40 et 49 ans",
+            "code": "A2"
+          },
+          {
+            "id": "a_50",
+            "libelle": "50 ans ou plus",
+            "code": "A3"
+          }
+        ]
+      },
+      {
+        "id": "q7_exposition",
+        "numero": 7,
+        "libelle": "Votre peau est-elle exposée ?",
+        "aide": "Chez Ella Baché, l’environnement compte jusqu’à 80 % du vieillissement de la peau. Plusieurs réponses possibles.",
+        "choix_multiple": true,
+        "_choix_multiple": "true : la cliente peut cocher plusieurs reponses.",
+        "bouton_continuer": "CONTINUER",
+        "exclusif": "x_aucun",
+        "_exclusif": "Cette reponse se coche seule : la choisir decoche les autres.",
+        "reponses": [
+          {
+            "id": "x_soleil",
+            "libelle": "Je m’expose au soleil sans protection",
+            "code": "X_SOLEIL",
+            "mention": "l’exposition au soleil"
+          },
+          {
+            "id": "x_tabac",
+            "libelle": "Je fume",
+            "code": "X_TABAC",
+            "mention": "le tabac"
+          },
+          {
+            "id": "x_pollution",
+            "libelle": "Je vis ou je travaille en ville",
+            "code": "X_POLLUTION",
+            "mention": "la pollution urbaine"
+          },
+          {
+            "id": "x_aucun",
+            "libelle": "Rien de tout cela",
+            "code": "X_AUCUN",
+            "mention": null
+          }
+        ]
       }
     ],
-    "_lisez_moi_priorites": "Le premier test vrai donne le profil. L’ordre est volontaire : on traite d’abord la barriere cutanee (reactivite), puis le sebum, puis l’hydratation, puis les preoccupations. Pour changer l’ordre, deplacez les lignes de cette liste. La derniere ligne est le profil par defaut.",
+    "_lisez_moi_priorites": "Les regles sont lues de haut en bas : la premiere vraie l'emporte, les suivantes ne sont pas examinees. Trois conditions existent. si_code : la cliente a donne ce code. si_min_preoccupations : elle a coche au moins ce nombre de preoccupations a la question 4. si_code a null : la regle de secours, toujours vraie. L'ordre suit la logique d'Ella Bache : d'abord ce qui empeche de soigner le reste (une peau qui reagit, une peau qui brille, une peau qui manque de gras), ensuite le cumul des signes, ensuite le signe isole.",
     "priorites": [
       {
         "rang": 1,
@@ -177,36 +247,46 @@
       },
       {
         "rang": 3,
-        "si_code": "H2",
-        "profil": "peau_assoiffee"
+        "si_code": "N2",
+        "profil": "peau_seche"
       },
       {
         "rang": 4,
-        "si_code": "P_TACHES",
+        "si_min_preoccupations": 3,
         "profil": "peau_a_regenerer"
       },
       {
         "rang": 5,
+        "si_code": "H2",
+        "profil": "peau_assoiffee"
+      },
+      {
+        "rang": 6,
         "si_code": "P_RIDES",
         "profil": "rides_installees"
       },
       {
-        "rang": 6,
+        "rang": 7,
         "si_code": "P_OVALE",
         "profil": "ovale_qui_se_relache"
       },
       {
-        "rang": 7,
+        "rang": 8,
+        "si_code": "P_TACHES",
+        "profil": "peau_a_regenerer"
+      },
+      {
+        "rang": 9,
         "si_code": "P_ECLAT",
         "profil": "teint_terne"
       },
       {
-        "rang": 8,
+        "rang": 10,
         "si_code": "H1",
         "profil": "peau_assoiffee"
       },
       {
-        "rang": 9,
+        "rang": 11,
         "si_code": null,
         "profil": "teint_terne"
       }
@@ -229,7 +309,50 @@
       "_lisez_moi": "Phrase ajoutee sous le rituel quand la cliente a coche plusieurs preoccupations : {autres} est remplace par celles qui n'ont pas donne le profil.",
       "texte": "Vous nous signalez aussi {autres}. Nous en tiendrons compte lors de votre séance.",
       "liaison": " et "
-    }
+    },
+    "grades": {
+      "_lisez_moi": "L'echelle vient du Book Formation Soin 360 Regard d'Ella Bache, page 21 : un schema a deux axes, l'age en abscisse et l'exposition aux stress environnementaux en ordonnee. Les textes de l'echelle sont leurs definitions, recopiees. Le calcul, lui, est la lecture de l'institut : le grade part de la tranche d'age, et monte d'un cran quand la cliente cumule au moins deux facteurs d'exposition. Ella Bache donne le schema, pas la formule. Le grade ne choisit JAMAIS la gamme : il regle la richesse des textures. Leur formation est explicite : traiter « non pas en fonction de l'age, mais des signes cliniques visibles ».",
+      "intitule": "l’échelle Ella Baché",
+      "base_age": {
+        "A0": 0,
+        "A1": 1,
+        "A2": 2,
+        "A3": 3
+      },
+      "codes_exposition": [
+        "X_SOLEIL",
+        "X_TABAC",
+        "X_POLLUTION"
+      ],
+      "seuil_exposition": 2,
+      "maximum": 3,
+      "phrase": "Votre lecture situe votre peau au {titre} de {intitule} : {texte}",
+      "phrase_exposition": "Votre exposition ({facteurs}) est prise en compte : elle situe votre peau un cran plus haut que son âge seul.",
+      "echelle": {
+        "0": {
+          "titre": "grade 0",
+          "texte": "avant 30 ans, rides rarement visibles au repos et rides d’expression non persistantes."
+        },
+        "1": {
+          "titre": "grade 1",
+          "texte": "vers la trentaine, les premières rides d’expression persistantes."
+        },
+        "2": {
+          "titre": "grade 2",
+          "texte": "rides installées sur le contour des yeux et le front, sillons qui se creusent, premières influences du photovieillissement."
+        },
+        "3": {
+          "titre": "grade 3",
+          "texte": "vers et après la cinquantaine, rides installées profondes et signes du photovieillissement bien visibles."
+        }
+      }
+    },
+    "codes_preoccupations": [
+      "P_RIDES",
+      "P_OVALE",
+      "P_ECLAT",
+      "P_TACHES"
+    ]
   },
   "branche_b": {
     "titre": "Offrir une lecture de peau",
@@ -382,42 +505,26 @@
       "intro": "D’après ce que vous nous dites de sa peau, voici ce que nous lui conseillerions."
     }
   },
-  "_lisez_moi_rituel": "Les etapes du rituel, dans l'ordre d'affichage. L'etape marquee selon_profil prend les produits du profil. sauf_si_profil retire l'etape pour les profils cites. produit_selon choisit un produit d'apres les reponses.",
+  "_lisez_moi_rituel": "Les etapes sont relevees sur les protocoles Ella Bache (fiches memo Formation > Visage). produit_selon_gamme : le demaquillant depend de la gamme, comme dans leurs protocoles - eau pour la peau reactive, lait pour les essentiels, huile pour les anti-age. produit_selon_profil : l'exfoliant depend du profil - l'enzymatique doux pour la peau reactive, le cible pour la peau grasse, le mecanique pour les autres. sauf_si_profil : l'etape saute pour ces profils.",
   "etapes_rituel": [
     {
       "id": "demaquiller",
       "titre": "Démaquiller",
-      "note": "Matin et soir, en deux temps.",
+      "note": "Matin et soir. Les yeux d’abord, le visage ensuite.",
       "gamme": "Ella Perfect",
       "produits": [
-        "huile-tomate-demaquillante"
+        "demaquillant-cils"
       ],
-      "produit_selon": {
-        "_lisez_moi": "Un produit choisi selon les réponses : la premiere regle vraie gagne. La derniere ligne, sans condition, est le choix par defaut.",
-        "regles": [
-          {
-            "si_codes": [
-              "H2"
-            ],
-            "produit": "lait-tomate-demaquillant"
-          },
-          {
-            "si_codes": [
-              "R2"
-            ],
-            "produit": "lait-tomate-demaquillant"
-          },
-          {
-            "si_codes": [
-              "S0"
-            ],
-            "produit": "lait-tomate-demaquillant"
-          },
-          {
-            "si_codes": [],
-            "produit": "eau-tomate-demaquillante"
-          }
-        ]
+      "produit_selon_gamme": {
+        "Sensibeautics": "eau-tomate-demaquillante",
+        "Pur Aromatics": "lait-tomate-demaquillant",
+        "Hydra Repulp": "lait-tomate-demaquillant",
+        "Nutri-Action": "lait-tomate-demaquillant",
+        "Tomate Glow": "huile-tomate-demaquillante",
+        "Green Filler": "huile-tomate-demaquillante",
+        "Morphostructure": "huile-tomate-demaquillante",
+        "Rejuvenium": "huile-tomate-demaquillante",
+        "_defaut": "lait-tomate-demaquillant"
       }
     },
     {
@@ -428,19 +535,23 @@
       "produits": [
         "mousseline-tomate-nettoyante",
         "tonique-tomate-eclat"
-      ]
+      ],
+      "sauf_si_profil": [
+        "peau_reactive"
+      ],
+      "_sauf_si_profil": "Pour la peau reactive, l'Eau Tomate fait les trois gestes a elle seule : elle demaquille, nettoie et tonifie. C'est le protocole Sensibeautics."
     },
     {
       "id": "exfolier",
       "titre": "Exfolier",
       "note": "Une à deux fois par semaine.",
       "gamme": "Ella Perfect",
-      "produits": [
-        "exfoliant-oleo-gel-tomate"
-      ],
-      "sauf_si_profil": [
-        "peau_reactive"
-      ]
+      "produits": [],
+      "produit_selon_profil": {
+        "peau_reactive": "micro-exfoliant-tomate-sans-grains",
+        "peau_brillante": "exfoliant-zone-t",
+        "_defaut": "exfoliant-oleo-gel-tomate"
+      }
     },
     {
       "id": "traiter",
@@ -460,8 +571,8 @@
     {
       "id": "completer",
       "titre": "Compléter",
-      "note": "En cure, à voir avec votre esthéticienne.",
-      "gamme": "Endermonutri",
+      "note": "En cure de 28 à 56 jours, deux fois par an.",
+      "gamme": "Nutraceutiques",
       "complement_du_profil": true
     }
   ],
@@ -473,12 +584,20 @@
       "besoin": "Être apaisée et renforcée avant tout autre soin.",
       "gamme_traiter": "Sensibeautics",
       "produits_traiter": [
-        "serum-red-focus",
-        "creme-probiotiques-hydra-apaisante"
+        "serum-red-focus"
       ],
       "soin_regard": null,
       "complement": null,
-      "coffret": null
+      "coffret": null,
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [],
+            "produit": "creme-probiotiques-hydra-apaisante"
+          }
+        ]
+      }
     },
     "peau_brillante": {
       "nom": "PEAU BRILLANTE",
@@ -487,12 +606,20 @@
       "besoin": "Être purifiée et matifiée, sans être asséchée.",
       "gamme_traiter": "Pur Aromatics",
       "produits_traiter": [
-        "serum-sebatics",
-        "creme-detox-hydra-matifiante"
+        "serum-sebatics"
       ],
       "soin_regard": null,
       "complement": null,
-      "coffret": null
+      "coffret": null,
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [],
+            "produit": "creme-detox-hydra-matifiante"
+          }
+        ]
+      }
     },
     "peau_assoiffee": {
       "nom": "PEAU ASSOIFFÉE",
@@ -501,12 +628,20 @@
       "besoin": "Retrouver de l’eau et du rebond.",
       "gamme_traiter": "Hydra Repulp",
       "produits_traiter": [
-        "super-serum-hydra-repulpant",
-        "gel-creme-hydra-repulpant"
+        "super-serum-hydra-repulpant"
       ],
       "soin_regard": "soin-regard-hydra-repulpant",
-      "complement": "acide-hyaluronique",
-      "coffret": "coffret-hydratation"
+      "complement": null,
+      "coffret": "coffret-hydratation",
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [],
+            "produit": "gel-creme-hydra-repulpant"
+          }
+        ]
+      }
     },
     "teint_terne": {
       "nom": "TEINT TERNE",
@@ -515,12 +650,26 @@
       "besoin": "Être lissée et révéler son éclat.",
       "gamme_traiter": "Tomate Glow",
       "produits_traiter": [
-        "essence-micro-peeling",
-        "creme-tomate-originale"
+        "super-serum-micro-peeling"
       ],
       "soin_regard": "soin-regard-renovateur-eclat",
-      "complement": null,
-      "coffret": "coffret-eclat"
+      "complement": "green-caps",
+      "coffret": "coffret-eclat",
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [
+              "S2"
+            ],
+            "produit": "creme-legere-renovatrice-eclat"
+          },
+          {
+            "si_codes": [],
+            "produit": "creme-tomate-originale"
+          }
+        ]
+      }
     },
     "rides_installees": {
       "nom": "RIDES INSTALLÉES",
@@ -529,12 +678,32 @@
       "besoin": "Être comblée et raffermie.",
       "gamme_traiter": "Green Filler",
       "produits_traiter": [
-        "super-serum-micro-combleur",
-        "creme-micro-comblante"
+        "super-serum-micro-combleur"
       ],
       "soin_regard": "soin-regard-micro-combleur",
-      "complement": "collagene-elastine",
-      "coffret": "coffret-rides-fermete"
+      "complement": "green-caps",
+      "coffret": "coffret-rides-fermete",
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [
+              "N2"
+            ],
+            "produit": "creme-riche-micro-comblante"
+          },
+          {
+            "si_codes": [
+              "S2"
+            ],
+            "produit": "creme-legere-micro-comblante"
+          },
+          {
+            "si_codes": [],
+            "produit": "creme-micro-comblante"
+          }
+        ]
+      }
     },
     "peau_a_regenerer": {
       "nom": "PEAU À RÉGÉNÉRER",
@@ -543,12 +712,26 @@
       "besoin": "Être régénérée sur tous les fronts à la fois.",
       "gamme_traiter": "Rejuvenium",
       "produits_traiter": [
-        "super-serum-pro-regeneratif",
-        "creme-pro-regenerative"
+        "super-serum-pro-regeneratif"
       ],
       "soin_regard": "soin-pro-regeneratif-yeux-levres",
-      "complement": "collagenity-pro-age",
-      "coffret": null
+      "complement": "green-caps",
+      "coffret": null,
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut.",
+        "regles": [
+          {
+            "si_codes": [
+              "N2"
+            ],
+            "produit": "creme-riche-pro-regenerative"
+          },
+          {
+            "si_codes": [],
+            "produit": "creme-pro-regenerative"
+          }
+        ]
+      }
     },
     "ovale_qui_se_relache": {
       "nom": "OVALE QUI SE RELÂCHE",
@@ -557,12 +740,54 @@
       "besoin": "Retrouver densité et tenue.",
       "gamme_traiter": "Morphostructure",
       "produits_traiter": [
-        "super-serum-pro-liftant",
-        "creme-riche-pro-liftante"
+        "super-serum-pro-liftant"
       ],
       "soin_regard": "skinissime-creme-regard",
-      "complement": "collagenity-pro-age",
-      "coffret": "coffret-anti-age"
+      "complement": "green-caps",
+      "coffret": "coffret-anti-age",
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut. Le grade 3 appelle ici la Creme Riche Pro-Liftante : c'est la seule regle d'age qu'Ella Bache ecrit noir sur blanc, la creme « aide a compenser les desequilibres cutanes lies a la periode de la menopause ».",
+        "regles": [
+          {
+            "si_grade_min": 3,
+            "produit": "creme-riche-pro-liftante"
+          },
+          {
+            "si_codes": [
+              "N2"
+            ],
+            "produit": "creme-riche-pro-liftante"
+          },
+          {
+            "si_codes": [],
+            "produit": "creme-pro-liftante"
+          }
+        ]
+      }
+    },
+    "peau_seche": {
+      "nom": "PEAU SÈCHE",
+      "code": "SEC",
+      "peau_dit": "Je suis rêche, je manque de gras.",
+      "besoin": "Être nourrie et relipidée.",
+      "gamme_traiter": "Nutri-Action",
+      "produits_traiter": [],
+      "creme_selon": {
+        "_lisez_moi": "La texture se choisit ici. si_grade_min : a partir de ce grade. si_codes : la cliente a donne tous ces codes. La derniere ligne, sans condition, est le choix par defaut. Ella Bache ne fixe pas de palier entre la Jojoba Fine et la Royale Riche : c'est la lecture de l'institut, a trancher avec l'estheticienne.",
+        "regles": [
+          {
+            "si_grade_min": 2,
+            "produit": "creme-royale-nutrition-riche"
+          },
+          {
+            "si_codes": [],
+            "produit": "creme-jojoba-nutrition-fine"
+          }
+        ]
+      },
+      "soin_regard": "creme-regard-nourrissante",
+      "complement": null,
+      "coffret": null
     }
   },
   "intitules_ordonnance": {
@@ -576,7 +801,10 @@
     "duo": "Votre duo de soins",
     "mention_marque": "Soins {marques} sélectionnés par Révélation Beauté",
     "signature": "L’équipe Révélation Beauté",
-    "_mention_marque": "{marques} est remplace par les marques reellement proposees, par exemple « Ella Baché » ou « Ella Baché et LPG »."
+    "_mention_marque": "{marques} est remplace par les marques reellement proposees. Le programme est aujourd'hui 100 % Ella Bache.",
+    "note_indisponible": "Votre esthéticienne vous le commande.",
+    "_note_indisponible": "Phrase affichee quand une etape n'a aucun produit en stock : au lieu de disparaitre, l'etape montre la gamme et cette mention.",
+    "grade": "SITUATION"
   },
   "appel_action": {
     "titre": "Présentez cet écran à l’accueil.",

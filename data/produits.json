@@ -213,9 +213,9 @@
       "gamme": "Green Filler",
       "besoin": "Rides installées",
       "prix_public_eur": 83.5,
-      "disponible": true,
+      "disponible": false,
       "image": "creme-micro-comblante.webp",
-      "remarque": "Produit vu en rayon mais non compté en caisse : disponibilité à confirmer par l’institut."
+      "remarque": "Stock à zéro en caisse."
     },
     "soin-regard-micro-combleur": {
       "nom": "Soin Regard Micro-Combleur",
@@ -260,39 +260,6 @@
       "disponible": true,
       "image": "skinissime-creme-regard.webp",
       "remarque": null
-    },
-    "acide-hyaluronique": {
-      "nom": "Acide Hyaluronique",
-      "marque": "LPG",
-      "contenance": null,
-      "gamme": "Endermonutri",
-      "besoin": "Compléments alimentaires",
-      "prix_public_eur": null,
-      "disponible": true,
-      "image": "acide-hyaluronique.webp",
-      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
-    },
-    "collagene-elastine": {
-      "nom": "Collagène et Élastine",
-      "marque": "LPG",
-      "contenance": null,
-      "gamme": "Endermonutri",
-      "besoin": "Compléments alimentaires",
-      "prix_public_eur": null,
-      "disponible": true,
-      "image": "collagene-elastine.webp",
-      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
-    },
-    "collagenity-pro-age": {
-      "nom": "Collagenity Pro-Âge",
-      "marque": "LPG",
-      "contenance": null,
-      "gamme": "Endermonutri",
-      "besoin": "Compléments alimentaires",
-      "prix_public_eur": null,
-      "disponible": true,
-      "image": "collagenity-pro-age.webp",
-      "remarque": "Complément alimentaire. Prix et conditionnement à renseigner par l’institut."
     },
     "super-serum-pro-regeneratif": {
       "nom": "Le Super Sérum Pro-Régénératif",
@@ -348,6 +315,149 @@
       "disponible": false,
       "image": "masque-bio-cellulose-pro-regeneratif.webp",
       "remarque": "Masque, hors rituel quotidien. À activer si l’institut le référence."
+    },
+    "demaquillant-cils": {
+      "nom": "Démaquillant Cils",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "demaquillant-cils.webp",
+      "remarque": null
+    },
+    "micro-exfoliant-tomate-sans-grains": {
+      "nom": "Micro-Exfoliant Tomate Sans Grains",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Ella Perfect",
+      "besoin": "Démaquiller & nettoyer",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "micro-exfoliant-tomate-sans-grains.webp",
+      "remarque": "L'exfoliant enzymatique doux. C'est celui du protocole Sensibeautics : le seul que la peau réactive supporte. Absent de la caisse, à commander."
+    },
+    "creme-jojoba-nutrition-fine": {
+      "nom": "Crème Jojoba Nutrition Fine",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Nutri-Action",
+      "besoin": "Peau sèche",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-jojoba-nutrition-fine.webp",
+      "remarque": "Absente de la caisse, à commander."
+    },
+    "creme-royale-nutrition-riche": {
+      "nom": "Crème Royale Nutrition Riche",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Nutri-Action",
+      "besoin": "Peau sèche",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-royale-nutrition-riche.webp",
+      "remarque": "Absente de la caisse, à commander."
+    },
+    "creme-regard-nourrissante": {
+      "nom": "Crème Regard Nourrissante",
+      "marque": "Ella Baché",
+      "contenance": "15 ml",
+      "gamme": "Nutri-Action",
+      "besoin": "Peau sèche",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-regard-nourrissante.webp",
+      "remarque": "Absente de la caisse, à commander."
+    },
+    "creme-legere-micro-comblante": {
+      "nom": "Crème Légère Micro-Comblante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Green Filler",
+      "besoin": "Rides installées",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-legere-micro-comblante.webp",
+      "remarque": "Absente de la caisse, à commander."
+    },
+    "creme-riche-micro-comblante": {
+      "nom": "Crème Riche Micro-Comblante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Green Filler",
+      "besoin": "Rides installées",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-riche-micro-comblante.webp",
+      "remarque": "Absente de la caisse, à commander."
+    },
+    "creme-pro-liftante": {
+      "nom": "Crème Pro-Liftante",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Morphostructure",
+      "besoin": "Ovale qui se relâche",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "creme-pro-liftante.webp",
+      "remarque": "Stock à zéro en caisse."
+    },
+    "creme-legere-renovatrice-eclat": {
+      "nom": "Crème Légère Rénovatrice Éclat",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Tomate Glow",
+      "besoin": "Teint terne",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "creme-legere-renovatrice-eclat.webp",
+      "remarque": null
+    },
+    "super-serum-micro-peeling": {
+      "nom": "Super Sérum Micro-Peeling",
+      "marque": "Ella Baché",
+      "contenance": "30 ml",
+      "gamme": "Tomate Glow",
+      "besoin": "Teint terne",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "super-serum-micro-peeling.webp",
+      "remarque": null
+    },
+    "green-caps": {
+      "nom": "Green Caps",
+      "marque": "Ella Baché",
+      "contenance": null,
+      "gamme": "Nutraceutiques",
+      "besoin": "Compléter",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "green-caps.webp",
+      "remarque": "Le nutraceutique anti-âge 360° d'Ella Baché. Cure de 28 à 56 jours, deux fois par an. Absent de la caisse."
+    },
+    "ridoki-micro-vibrant": {
+      "nom": "Ridoki Micro-Vibrant",
+      "marque": "Ella Baché",
+      "contenance": "2 têtes",
+      "gamme": "Device",
+      "besoin": "Anti-âge",
+      "prix_public_eur": null,
+      "disponible": false,
+      "image": "ridoki-micro-vibrant.webp",
+      "remarque": "Un seul exemplaire en caisse : laissé hors des ordonnances tant que le stock n'est pas refait."
+    },
+    "exfoliant-zone-t": {
+      "nom": "Exfoliant Zone T Désincrustant",
+      "marque": "Ella Baché",
+      "contenance": "50 ml",
+      "gamme": "Pur Aromatics",
+      "besoin": "Brillance & imperfections",
+      "prix_public_eur": null,
+      "disponible": true,
+      "image": "exfoliant-zone-t.webp",
+      "remarque": "L'exfoliant cible du front et du nez, pour les imperfections localisées."
     }
   },
   "coffrets": {
@@ -473,6 +583,24 @@
       "position_ella_bache": "Soins inspires par la medecine anti-age de longevite & developpes en collaboration avec un medecin esthetique et anti-age pour agir sur les 10 signes de l'age.",
       "verifie_le": "2026-11-23",
       "source": "https://www.ellabache.com/37-rejuvenium"
+    },
+    "Nutri-Action": {
+      "resume": "Des omégas d’huiles végétales pour nourrir les peaux sèches et leur rendre du confort.",
+      "position_ella_bache": "Le soin nutri-reparateur des peaux seches. Creme Jojoba Nutrition Fine : le soin nourrissant culte quotidien version legere. Creme Royale Nutrition Riche : version riche, nourrissante et protectrice.",
+      "verifie_le": "2026-11-26",
+      "source": "ellabachepro.com > Formation > Visage > Les Essentiels > Nutri-Action (Fiche Mémo 2024)"
+    },
+    "Ella Perfect": {
+      "resume": "Les gestes de démaquillage et de nettoyage à l’extrait de tomate, sur lesquels tout le reste se pose.",
+      "position_ella_bache": "Eau Tomate Demaquillante : le geste express 3 en 1 visage et yeux anti-pollution. Lait Tomate Demaquillant : le demaquillant confort. Huile Tomate Demaquillante : elimine tous types de maquillages, meme waterproof. Micro-Exfoliant Tomate Sans Grains : l'exfoliant enzymatique doux aux enzymes de papaye. Exfoliant Oleo-Gel Tomate : exfoliation mecanique, usage sur peau seche.",
+      "verifie_le": "2026-11-26",
+      "source": "ellabachepro.com > Formation > Visage > Les Essentiels > Ella Perfect (Fiche Mémo 2024)"
+    },
+    "Nutraceutiques": {
+      "resume": "Les compléments alimentaires d’Ella Baché, troisième volet de leur programme à domicile.",
+      "position_ella_bache": "Les nutraceutiques : une gamme de complements alimentaires concentres en nutriments actifs pour maximiser l'efficacite topique. Green Caps : le nutraceutique anti-age 360, en cure de 28 a 56 jours, deux fois par an.",
+      "verifie_le": "2026-11-26",
+      "source": "ellabachepro.com > E-Learning > Présentation de marque"
     }
   }
 }
