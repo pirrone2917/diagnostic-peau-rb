@@ -16,7 +16,7 @@
 
 /** Votre adresse email : vous recevrez un message à chaque lecture.
  *  Laissez vide ('') si vous ne voulez pas être prévenu. */
-var EMAIL_INSTITUT = '';
+var EMAIL_INSTITUT = 'angelnotarrigo@hotmail.com';
 
 /** L'adresse du site une fois en ligne, par exemple
  *  'https://revelationbeaute.github.io/diagnostic-peau/'.
