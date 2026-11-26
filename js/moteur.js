@@ -24,14 +24,13 @@
     var priorites = diagnostic.branche_a.priorites;
     var profilId = null;
 
-    var codeRetenu = null;
+    var regleRetenue = null;
     for (var i = 0; i < priorites.length; i++) {
       var regle = priorites[i];
-      if (regle.si_code === null || codes.indexOf(regle.si_code) !== -1) {
-        profilId = regle.profil;
-        codeRetenu = regle.si_code;
-        break;
-      }
+      if (!regleVraie(regle, codes, diagnostic)) continue;
+      profilId = regle.profil;
+      regleRetenue = regle;
+      break;
     }
     if (!profilId) return null;
 
@@ -42,9 +41,108 @@
       id: profilId,
       profil: profil,
       notes: notesSecondaires(codes, profilId, diagnostic)
-        .concat(notePreoccupations(codes, codeRetenu, diagnostic)),
+        .concat(notePreoccupations(codes, regleRetenue, diagnostic)),
       soinRegardId: soinRegard(codes, profil, diagnostic)
     };
+  }
+
+  /**
+   * Une règle de priorité est-elle vraie ?
+   * Trois formes, décrites dans diagnostic.json :
+   *   si_code                 — la cliente a donné ce code ;
+   *   si_min_preoccupations   — elle a coché au moins ce nombre de préoccupations ;
+   *   si_code à null          — la règle de secours, toujours vraie.
+   */
+  function regleVraie(regle, codes, diagnostic) {
+    if (typeof regle.si_min_preoccupations === 'number') {
+      return compterPreoccupations(codes, diagnostic) >= regle.si_min_preoccupations;
+    }
+    return regle.si_code === null || codes.indexOf(regle.si_code) !== -1;
+  }
+
+  /** Combien de préoccupations la cliente a-t-elle cochées à la question 4 ? */
+  function compterPreoccupations(codes, diagnostic) {
+    var liste = diagnostic.branche_a.codes_preoccupations || [];
+    var total = 0;
+    for (var i = 0; i < liste.length; i++) {
+      if (codes.indexOf(liste[i]) !== -1) total++;
+    }
+    return total;
+  }
+
+  /* -------------------------------------------------------- Le grade Ella Baché */
+
+  /**
+   * Situe la peau sur l'échelle d'Ella Baché.
+   *
+   * Leur schéma a deux axes : l'âge et l'exposition aux stress environnementaux.
+   * Le grade part donc de la tranche d'âge et monte d'un cran quand la cliente
+   * cumule assez de facteurs d'exposition. Le seuil et les paliers sont dans
+   * diagnostic.json ; rien n'est écrit en dur ici.
+   *
+   * Le grade ne choisit jamais la gamme : la formation Ella Baché demande de
+   * traiter « non pas en fonction de l'âge, mais des signes cliniques visibles ».
+   * Il sert à régler la richesse des textures.
+   */
+  function grade(codes, diagnostic) {
+    var reglage = (diagnostic.branche_a || {}).grades;
+    if (!reglage) return null;
+    var reponses = codes || [];
+
+    var niveau = null;
+    var base = reglage.base_age || {};
+    for (var cle in base) {
+      if (base.hasOwnProperty(cle) && reponses.indexOf(cle) !== -1) { niveau = base[cle]; break; }
+    }
+    if (niveau === null) return null;
+
+    var facteurs = [];
+    var exposition = reglage.codes_exposition || [];
+    for (var i = 0; i < exposition.length; i++) {
+      if (reponses.indexOf(exposition[i]) !== -1) facteurs.push(exposition[i]);
+    }
+    var releve = facteurs.length >= (reglage.seuil_exposition || 2);
+    if (releve) niveau = Math.min(niveau + 1, reglage.maximum);
+
+    var palier = (reglage.echelle || {})[String(niveau)] || {};
+    var mentions = mentionsDeCodes(facteurs, diagnostic);
+
+    return {
+      niveau: niveau,
+      titre: palier.titre || '',
+      texte: palier.texte || '',
+      releve: releve,
+      facteurs: mentions,
+      phrase: String(reglage.phrase || '')
+        .replace('{titre}', palier.titre || '')
+        .replace('{intitule}', reglage.intitule || '')
+        .replace('{texte}', palier.texte || ''),
+      phrase_exposition: releve
+        ? String(reglage.phrase_exposition || '').replace('{facteurs}', enumerer(mentions))
+        : ''
+    };
+  }
+
+  /** Retrouve, dans les questions, la mention à afficher pour chaque code. */
+  function mentionsDeCodes(codes, diagnostic) {
+    var questions = (diagnostic.branche_a || {}).questions || [];
+    var mentions = [];
+    for (var i = 0; i < questions.length; i++) {
+      var reponses = questions[i].reponses || [];
+      for (var j = 0; j < reponses.length; j++) {
+        if (codes.indexOf(reponses[j].code) !== -1 && reponses[j].mention) {
+          mentions.push(reponses[j].mention);
+        }
+      }
+    }
+    return mentions;
+  }
+
+  /** « a, b et c » — une énumération française. */
+  function enumerer(liste) {
+    if (!liste || !liste.length) return '';
+    if (liste.length === 1) return liste[0];
+    return liste.slice(0, -1).join(', ') + ' et ' + liste[liste.length - 1];
   }
 
   /** Phrases secondaires affichées sous le rituel (sensibilité ponctuelle, etc.). */
@@ -66,19 +164,28 @@
    * Quand la cliente a coché plusieurs préoccupations, une seule donne le profil.
    * Les autres sont rappelées sous le rituel, pour que rien ne soit perdu.
    */
-  function notePreoccupations(codes, codeRetenu, diagnostic) {
+  function notePreoccupations(codes, regleRetenue, diagnostic) {
     var regle = diagnostic.branche_a.note_preoccupations;
     if (!regle) return [];
 
-    var question = null;
-    var questions = diagnostic.branche_a.questions;
-    for (var i = 0; i < questions.length; i++) {
-      if (questions[i].choix_multiple) { question = questions[i]; break; }
-    }
-    if (!question) return [];
+    // Quand le profil a été choisi parce que les signes se cumulent, la gamme
+    // les prend déjà tous en charge : rappeler la liste n'apprendrait rien.
+    if (regleRetenue && typeof regleRetenue.si_min_preoccupations === 'number') return [];
+    var codeRetenu = regleRetenue ? regleRetenue.si_code : null;
+
+    // On ne lit que les préoccupations : la question 7 accepte elle aussi
+    // plusieurs réponses, et elle n'a rien à faire ici.
+    var attendus = diagnostic.branche_a.codes_preoccupations || [];
+    var reponses = [];
+    (diagnostic.branche_a.questions || []).forEach(function (question) {
+      (question.reponses || []).forEach(function (reponse) {
+        if (attendus.indexOf(reponse.code) !== -1) reponses.push(reponse);
+      });
+    });
+    if (!reponses.length) return [];
 
     var autres = [];
-    question.reponses.forEach(function (reponse) {
+    reponses.forEach(function (reponse) {
       if (!reponse.mention) return;
       if (reponse.code === codeRetenu) return;
       if (codes.indexOf(reponse.code) !== -1) autres.push(reponse.mention);
@@ -152,7 +259,7 @@
    * les produits choisis selon les réponses, et ceux qui ne conviennent pas
    * à ce profil. Les produits indisponibles sont écartés.
    */
-  function rituel(profil, diagnostic, produits, codes, profilId) {
+  function rituel(profil, diagnostic, produits, codes, profilId, niveauGrade) {
     var liste = diagnostic.etapes_rituel || [];
     var retenues = [];
 
@@ -169,8 +276,23 @@
 
       if (modele.selon_profil) {
         if (!profil) continue;
-        ids = (profil.produits_traiter || []).slice();
+        // La texture de la crème se choisit ici : elle dépend de la peau et du grade.
+        ids = produitsTraiter(profil, codes, niveauGrade);
         gamme = profil.gamme_traiter;
+      }
+
+      // Le démaquillant suit la gamme, comme dans les protocoles Ella Baché.
+      if (modele.produit_selon_gamme && profil) {
+        var parGamme = modele.produit_selon_gamme;
+        var suivantGamme = parGamme[profil.gamme_traiter] || parGamme._defaut;
+        if (suivantGamme) ids.push(suivantGamme);
+      }
+
+      // L'exfoliant suit le profil : l'enzymatique doux pour une peau réactive.
+      if (modele.produit_selon_profil) {
+        var parProfil = modele.produit_selon_profil;
+        var suivantProfil = (profilId && parProfil[profilId]) || parProfil._defaut;
+        if (suivantProfil) ids.push(suivantProfil);
       }
 
       // L'étape « Compléter » n'existe que si le profil a un complément.
@@ -179,7 +301,7 @@
         ids = [profil.complement];
       }
 
-      var choisi = produitSelon(modele.produit_selon, codes);
+      var choisi = produitSelon(modele.produit_selon, codes, niveauGrade);
       if (choisi) ids.push(choisi);
 
       var etape = composer(retenues.length + 1, modele.titre, modele.note, gamme, ids, produits);
@@ -188,17 +310,29 @@
       // sur laquelle la cliente interrogera son esthéticienne.
       if (modele.selon_profil) etape.resume = resumeGamme(gamme, produits);
 
-      if (etape.produits.length) retenues.push(etape);
+      // Un soin juste mais absent de la caisse n'est pas tu : il devient
+      // une commande à passer, pas un silence.
+      if (etape.manquants.length) {
+        etape.note_manquants = (diagnostic.intitules_ordonnance || {}).note_indisponible || '';
+      }
+
+      if (etape.produits.length || etape.manquants.length) retenues.push(etape);
     }
     return retenues;
   }
 
   /** Choisit un produit d'après les réponses : la première règle vraie gagne. */
-  function produitSelon(regle, codes) {
+  function produitSelon(regle, codes, niveauGrade) {
     if (!regle || !regle.regles) return null;
     var reponses = codes || [];
     for (var i = 0; i < regle.regles.length; i++) {
       var ligne = regle.regles[i];
+      // Une règle de grade : elle ne s'applique qu'à partir d'un palier.
+      if (typeof ligne.si_grade_min === 'number') {
+        if (typeof niveauGrade !== 'number') continue;
+        if (niveauGrade < ligne.si_grade_min) continue;
+        return ligne.produit;
+      }
       var conditions = ligne.si_codes || [];
       var toutesVraies = true;
       for (var j = 0; j < conditions.length; j++) {
@@ -217,11 +351,28 @@
 
   function composer(numero, titre, note, gamme, ids, produits) {
     var retenus = [];
+    var manquants = [];
     for (var i = 0; i < (ids || []).length; i++) {
       var fiche = produits.produits[ids[i]];
-      if (fiche && fiche.disponible === true) retenus.push({ id: ids[i], produit: fiche });
+      if (!fiche) continue;
+      if (fiche.disponible === true) retenus.push({ id: ids[i], produit: fiche });
+      else manquants.push({ id: ids[i], produit: fiche });
     }
-    return { numero: numero, titre: titre, note: note || '', gamme: gamme, resume: '', produits: retenus };
+    return { numero: numero, titre: titre, note: note || '', gamme: gamme,
+             resume: '', produits: retenus, manquants: manquants, note_manquants: '' };
+  }
+
+  /**
+   * Les soins du profil : le sérum, puis la crème dont la texture dépend
+   * de la peau et du grade. Utilisé par le rituel et par le duo de secours,
+   * pour qu'ils ne puissent pas diverger.
+   */
+  function produitsTraiter(profil, codes, niveauGrade) {
+    if (!profil) return [];
+    var ids = (profil.produits_traiter || []).slice();
+    var creme = produitSelon(profil.creme_selon, codes, niveauGrade);
+    if (creme) ids.push(creme);
+    return ids;
   }
 
   /* ----------------------------------------------------------- Code de lecture */
@@ -279,16 +430,20 @@
       : ctx.resultat.coffretId;
     var coffret = coffretAffichable(coffretId, ctx.produits, ctx.config);
 
+    var lecture = grade(ctx.codes || [], diagnostic);
+
     var resume = {
       branche: ctx.branche,
       code: ctx.code,
       date: ctx.date,
+      grade: lecture,
       intitules: diagnostic.intitules_ordonnance,
       profil: profil ? profil.nom : '',
       peau_dit: ctx.branche === 'a' && profil ? profil.peau_dit : '',
       besoin: profil ? profil.besoin : '',
       etapes: [],
       soin_regard: '',
+      soin_regard_a_commander: false,
       notes: ctx.resultat.notes || [],
       coffret: null,
       duo: [],
@@ -297,26 +452,36 @@
       institut: ctx.config.institut
     };
 
+    var niveau = lecture ? lecture.niveau : undefined;
+    var etapes = ctx.branche === 'a' && profil
+      ? rituel(profil, diagnostic, ctx.produits, ctx.codes, ctx.profilId, niveau)
+      : [];
+
     if (ctx.branche === 'a' && profil) {
-      rituel(profil, diagnostic, ctx.produits, ctx.codes, ctx.profilId).forEach(function (etape) {
+      etapes.forEach(function (etape) {
         resume.etapes.push({
           numero: etape.numero,
           titre: etape.titre,
           note: etape.note,
           gamme: etape.gamme,
           resume: etape.resume,
-          produits: etape.produits.map(function (p) { return nomComplet(p.produit); })
+          produits: etape.produits.map(function (p) { return nomComplet(p.produit); }),
+          manquants: etape.manquants.map(function (p) { return nomComplet(p.produit); }),
+          note_manquants: etape.note_manquants
         });
       });
       if (ctx.resultat.soinRegardId) {
         var regard = ctx.produits.produits[ctx.resultat.soinRegardId];
-        if (regard) resume.soin_regard = nomComplet(regard);
+        if (regard) {
+          resume.soin_regard = nomComplet(regard);
+          // Le soin regard juste peut lui aussi manquer en caisse.
+          resume.soin_regard_a_commander = regard.disponible !== true;
+        }
       }
     }
 
     resume.mention_marque = mentionMarques(
-      resume.etapes.length ? rituel(profil, diagnostic, ctx.produits, ctx.codes, ctx.profilId) : [],
-      coffret ? coffret.coffret : null,
+      etapes, coffret ? coffret.coffret : null,
       diagnostic.intitules_ordonnance.mention_marque);
 
     if (coffret) {
@@ -329,7 +494,7 @@
         contenu: coffret.coffret.contenu || []
       };
     } else if (profil) {
-      (profil.produits_traiter || []).forEach(function (id) {
+      produitsTraiter(profil, ctx.codes, niveau).forEach(function (id) {
         var fiche = ctx.produits.produits[id];
         if (fiche && fiche.disponible === true) resume.duo.push(nomComplet(fiche));
       });
@@ -346,6 +511,8 @@
 
   var api = {
     profilBrancheA: profilBrancheA,
+    grade: grade,
+    produitsTraiter: produitsTraiter,
     coffretBrancheB: coffretBrancheB,
     coffretAffichable: coffretAffichable,
     rituel: rituel,

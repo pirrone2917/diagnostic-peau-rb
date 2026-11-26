@@ -307,7 +307,10 @@
     var d = etat.diagnostic;
     var mots = d.intitules_ordonnance;
     var profil = etat.resultat.profil;
-    var etapes = MoteurLecture.rituel(profil, d, etat.produits, codesPlats(), etat.resultat.id);
+    var codes = codesPlats();
+    var lecture = MoteurLecture.grade(codes, d);
+    var niveau = lecture ? lecture.niveau : undefined;
+    var etapes = MoteurLecture.rituel(profil, d, etat.produits, codes, etat.resultat.id, niveau);
     var coffret = MoteurLecture.coffretAffichable(profil.coffret, etat.produits, etat.config);
     var regard = etat.resultat.soinRegardId ? etat.produits.produits[etat.resultat.soinRegardId] : null;
 
@@ -323,6 +326,17 @@
     h += '<div class="bloc revele"><p class="etiquette">' + echappe(mots.besoin) + '</p>'
       + '<p class="bloc__texte">' + echappe(profil.besoin) + '</p></div>';
 
+    // Où la peau se situe sur l'échelle d'Ella Baché. L'âge ne choisit pas
+    // les soins : il dit à quelle intensité les régler.
+    if (lecture && mots.grade) {
+      h += '<div class="bloc revele"><p class="etiquette">' + echappe(mots.grade) + '</p>'
+        + '<p class="bloc__texte">' + echappe(lecture.phrase) + '</p>';
+      if (lecture.phrase_exposition) {
+        h += '<p class="bloc__texte bloc__texte--second">' + echappe(lecture.phrase_exposition) + '</p>';
+      }
+      h += '</div>';
+    }
+
     h += '<div class="bloc revele"><p class="etiquette">' + echappe(mots.rituel) + '</p>'
       + '<ol class="rituel">';
     etapes.forEach(function (etape) {
@@ -334,13 +348,22 @@
         + '</div>'
         + '<ul class="rituel__produits">';
       etape.produits.forEach(function (p) { h += '<li>' + htmlProduit(p.produit) + '</li>'; });
+      // Un soin juste mais absent de la caisse devient une commande, pas un silence.
+      etape.manquants.forEach(function (p) {
+        h += '<li class="produit--a-commander">' + htmlProduit(p.produit)
+          + '<p class="produit__commande">' + echappe(etape.note_manquants) + '</p></li>';
+      });
       h += '</ul></li>';
     });
     h += '</ol></div>';
 
     if (regard) {
+      var aCommander = regard.disponible !== true;
       h += '<div class="bloc revele"><p class="etiquette">' + echappe(mots.soin_regard) + '</p>'
-        + '<ul class="rituel__produits" style="margin-top:.75rem"><li>' + htmlProduit(regard) + '</li></ul></div>';
+        + '<ul class="rituel__produits" style="margin-top:.75rem">'
+        + '<li' + (aCommander ? ' class="produit--a-commander"' : '') + '>' + htmlProduit(regard)
+        + (aCommander ? '<p class="produit__commande">' + echappe(mots.note_indisponible || '') + '</p>' : '')
+        + '</li></ul></div>';
     }
 
     (etat.resultat.notes || []).forEach(function (note) {
@@ -431,12 +454,18 @@
         h += '</ul>';
       }
     } else {
+      // Tous les soins du profil peuvent être à commander : dans ce cas,
+      // mieux vaut ne rien annoncer que d'afficher un titre sans rien dessous.
+      var duo = [];
+      MoteurLecture.produitsTraiter(profil, codesPlats(),
+        (MoteurLecture.grade(codesPlats(), etat.diagnostic) || {}).niveau).forEach(function (id) {
+        var fiche = etat.produits.produits[id];
+        if (fiche && fiche.disponible === true) duo.push(fiche);
+      });
+      if (!duo.length) return '';
       h += '<p class="etiquette">' + echappe(mots.duo) + '</p>';
       h += '<ul class="rituel__produits" style="margin-top:1rem">';
-      (profil ? profil.produits_traiter : []).forEach(function (id) {
-        var fiche = etat.produits.produits[id];
-        if (fiche && fiche.disponible === true) h += '<li>' + htmlProduit(fiche) + '</li>';
-      });
+      duo.forEach(function (fiche) { h += '<li>' + htmlProduit(fiche) + '</li>'; });
       h += '</ul>';
     }
     h += '</section>';
