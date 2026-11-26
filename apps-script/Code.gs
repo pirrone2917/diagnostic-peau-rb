@@ -69,19 +69,13 @@ var COL_ENVOI = 19;        // S
 /* ------------------------------------------------------------ Réception */
 
 function doPost(e) {
-  // Un seul enregistrement à la fois : évite deux lignes pour la même lecture
-  // quand deux envois arrivent presque en même temps.
-  var verrou = LockService.getScriptLock();
   try {
-    verrou.waitLock(20000);
     var donnees = JSON.parse(e.postData.contents);
     enregistrer(donnees);
     return reponse({ ok: true });
   } catch (erreur) {
     console.error(erreur);
     return reponse({ ok: false });
-  } finally {
-    try { verrou.releaseLock(); } catch (ignore) {}
   }
 }
 
@@ -248,6 +242,14 @@ function htmlOrdonnance(d) {
     h.push(p(style(SERIF, 20, CHARBON) + 'line-height:1.5;', echappe(o.besoin)));
   }
 
+  if (o.grade && mots.grade) {
+    h.push(etiquette(mots.grade));
+    h.push(p(style(SERIF, 20, CHARBON) + 'line-height:1.5;', echappe(o.grade.phrase)));
+    if (o.grade.phrase_exposition) {
+      h.push(p(style(SERIF, 16, CHARBON) + 'line-height:1.5;', echappe(o.grade.phrase_exposition)));
+    }
+  }
+
   if (o.etapes && o.etapes.length) {
     h.push(etiquette(mots.rituel || 'Votre rituel Révélation'));
     h.push('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">');
@@ -265,6 +267,17 @@ function htmlOrdonnance(d) {
       }
       h.push('<div style="' + style(SERIF, 17, CHARBON) + 'font-style:italic;margin-top:4px;">'
         + echappe(etape.gamme) + '</div>');
+      if (etape.resume) {
+        h.push('<div style="' + style(SERIF, 15, CHARBON) + 'line-height:1.5;margin-top:5px;">'
+          + echappe(etape.resume) + '</div>');
+      }
+      (etape.manquants || []).forEach(function (nom) {
+        h.push('<div style="' + style(SERIF, 17, CHARBON) + 'line-height:1.45;margin-top:8px;">'
+          + echappe(nom) + '</div>');
+        h.push('<div style="' + style(LINEAIRE, 9, CHARBON)
+          + 'letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;">'
+          + echappe(etape.note_manquants || '') + '</div>');
+      });
       (etape.produits || []).forEach(function (nom) {
         h.push('<div style="' + style(SERIF, 17, CHARBON) + 'line-height:1.45;margin-top:8px;">'
           + echappe(nom) + '</div>');
@@ -278,6 +291,11 @@ function htmlOrdonnance(d) {
   if (o.soin_regard) {
     h.push(etiquette(mots.soin_regard || 'Pour le regard'));
     h.push(p(style(SERIF, 17, CHARBON) + 'line-height:1.45;margin-top:8px;', echappe(o.soin_regard)));
+    if (o.soin_regard_a_commander) {
+      h.push('<div style="' + style(LINEAIRE, 9, CHARBON)
+        + 'letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;">'
+        + echappe(mots.note_indisponible || '') + '</div>');
+    }
   }
 
   (o.notes || []).forEach(function (note) {
@@ -368,6 +386,7 @@ function htmlOrdonnance(d) {
 /** Version texte, pour les boîtes mail qui n'affichent pas le HTML. */
 function texteOrdonnance(d) {
   var o = d.ordonnance;
+  var mots = o.intitules || {};
   var l = [];
   l.push('RÉVÉLATION BEAUTÉ — LECTURE DE PEAU');
   l.push(o.code + ' — ' + o.date);
@@ -377,12 +396,24 @@ function texteOrdonnance(d) {
   l.push('');
   if (o.peau_dit) l.push('Votre peau dit : « ' + o.peau_dit + ' »');
   if (o.besoin) l.push('Ce dont elle a besoin : ' + o.besoin);
+  if (o.grade) {
+    l.push('');
+    l.push(o.grade.phrase);
+    if (o.grade.phrase_exposition) l.push(o.grade.phrase_exposition);
+  }
   l.push('');
   (o.etapes || []).forEach(function (e) {
     l.push(e.numero + '. ' + e.titre.toUpperCase() + ' — ' + e.gamme);
     (e.produits || []).forEach(function (n) { l.push('   ' + n); });
+    (e.manquants || []).forEach(function (n) {
+      l.push('   ' + n + ' (' + (e.note_manquants || '') + ')');
+    });
   });
-  if (o.soin_regard) { l.push(''); l.push('Pour le regard : ' + o.soin_regard); }
+  if (o.soin_regard) {
+    l.push('');
+    l.push('Pour le regard : ' + o.soin_regard
+      + (o.soin_regard_a_commander ? ' (' + (mots.note_indisponible || '') + ')' : ''));
+  }
   (o.notes || []).forEach(function (n) { l.push(''); l.push(n); });
   if (o.coffret) {
     l.push('');
