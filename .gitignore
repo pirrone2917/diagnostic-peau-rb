@@ -1,0 +1,19 @@
+# Fichiers du Mac, sans intérêt pour le site
+.DS_Store
+._*
+
+# Réglages locaux de l'éditeur
+.claude/
+
+# Sorties régénérables par les outils de tools/
+tools/resultats-logique.csv
+
+# Fichiers déposés dans le dossier mais qui n'appartiennent pas au site
+*.mp4
+*.mov
+/catalogue-visage-ella-bache.csv
+/prompt-claude-code-diagnostic-rb.md
+
+# Les releves de la formation Ella Bache restent sur le poste de l'institut :
+# le depot est public, et ces documents sont derriere leur acces professionnel.
+sources/
