@@ -377,6 +377,28 @@ img { max-width: 100%; display: block; border: 0; }
 }
 .bloc__texte--dit { font-style: italic; }
 
+/* La seconde phrase d'un bloc : l'exposition qui releve le grade. */
+.bloc__texte--second {
+  font-size: 1.0625rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Un soin juste mais absent de la caisse : il se voit, en retrait. */
+.produit--a-commander .produit__nom,
+.produit--a-commander .produit__contenance { opacity: 0.72; }
+.produit__commande {
+  font-family: var(--structure);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.375rem;
+  padding-top: 0.375rem;
+  border-top: var(--filet) solid var(--charbon);
+  opacity: 0.8;
+}
+
 .rituel {
   list-style: none;
   margin: 1rem 0 0;
