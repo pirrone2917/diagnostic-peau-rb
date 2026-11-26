@@ -50,6 +50,8 @@ VISUELS = {
     "exfoliant-zone-t": "1866-thickbox_default/exfoliant-zone-t-desincrustant.jpg",
     "creme-jojoba-nutrition-fine": "1869-thickbox_default/creme-jojoba-nutrition-fine.jpg",
     "creme-royale-nutrition-riche": "1870-thickbox_default/creme-royale-nutrition-riche.jpg",
+    # Absente de la boutique : prise dans la banque d'images Ella Bache Pro.
+    "creme-regard-nourrissante": "https://www.ellabachepro.com/site/uploaded/photos/0670hd.jpg",
     "creme-legere-micro-comblante": "1875-thickbox_default/creme-legere-micro-comblante.jpg",
     "creme-riche-micro-comblante": "1878-thickbox_default/creme-riche-micro-comblante.jpg",
     "creme-pro-liftante": "2791-thickbox_default/creme-pro-liftante.jpg",
@@ -92,7 +94,10 @@ MANQUANTS = {
 
 
 def telecharger(chemin):
-    requete = urllib.request.Request(SOURCE + chemin, headers={"User-Agent": "Mozilla/5.0"})
+    # Une adresse complete passe telle quelle : certains visuels ne sont pas
+    # sur la boutique mais dans la banque d'images professionnelle.
+    url = chemin if chemin.startswith("http") else SOURCE + chemin
+    requete = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     donnees = urllib.request.urlopen(requete, timeout=30).read()
     image = cv2.imdecode(np.frombuffer(donnees, np.uint8), cv2.IMREAD_COLOR)
     if image is None:
